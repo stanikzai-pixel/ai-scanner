@@ -12,16 +12,19 @@
 .liquidity-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 19px;border-bottom:1px solid #273447;flex-wrap:wrap}.liquidity-toggle{display:flex;align-items:center;gap:8px;color:#d2e3f4;font-size:11px;font-weight:700}.liquidity-toggle input{accent-color:#50c8e8}.liquidity-tf .latest{font-size:11px;color:#b8cadb;margin-top:6px;overflow-wrap:anywhere}.liquidity-tf .status-line{font-size:10px;color:#90a9bf;margin-top:4px}.liquidity-note{color:#a7b9cc;font-size:11px}.liquidity-panel .structure-tf{border-color:#315069}
 .context-panel{grid-column:1/-1}.context-evidence{font-size:10px;color:var(--muted);margin-top:9px;overflow-wrap:anywhere}.context-evidence summary{cursor:pointer;color:var(--cyan)}.context-source-list{max-height:165px;overflow:auto;padding:6px 8px;border-left:1px solid var(--line)}.context-source-list p{margin:7px 0;overflow-wrap:anywhere}
 .history-body{padding:16px 19px;display:grid;gap:13px}.history-info{font-size:11px;color:#a6bbcf;overflow-wrap:anywhere}.history-actions,.history-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.history-controls label{font-size:11px;color:#9cb1c7}.history-controls input{background:#0c141e;color:#e7f3fd;border:1px solid #365067;border-radius:8px;padding:9px 10px;min-width:230px;max-width:100%;color-scheme:dark}.replay-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.replay-card{padding:11px;border:1px solid #2b4155;border-radius:9px;background:#101c29;min-width:0;overflow-wrap:anywhere}.replay-card strong{font-size:12px}.replay-card p{margin:5px 0 0;color:#a6b9cf;font-size:10px}.replay-card .bias{font-size:14px}@media(max-width:740px){.replay-results{grid-template-columns:repeat(2,minmax(0,1fr))}.history-controls input{flex:1;min-width:160px}.history-actions .btn{flex:1}}@media(max-width:400px){.replay-results{grid-template-columns:1fr}}
+
+.signal-panel{border-color:#29506a;background:linear-gradient(145deg,#142338,#0d1724 65%)}.signal-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 17px;border-bottom:1px solid #293c51}.signal-controls label{font-size:11px;color:#98adc3}.signal-controls select,.signal-controls input{background:#0c1724;color:#dcebf8;border:1px solid #36516a;border-radius:7px;padding:8px 9px;max-width:155px;min-width:0}.signal-health{padding:10px 17px;font-size:10px;color:#9fb7cb;overflow-wrap:anywhere}.signal-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;padding:14px}.signal-empty{grid-column:1/-1;text-align:center;padding:27px;color:#9db0c5;border:1px dashed #34506a;border-radius:10px;font-size:12px}.signal-card{background:#0a1826;border:1px solid #315169;border-radius:11px;padding:13px;min-width:0;overflow-wrap:anywhere}.signal-card.long{border-top:2px solid #3ccea5}.signal-card.short{border-top:2px solid #f07a89}.signal-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}.signal-stage{color:#d4e6f4;font-size:9px;letter-spacing:.4px;border:1px solid #35536b;padding:4px 6px;border-radius:5px}.signal-stage.confirmed{color:#44dda9}.signal-stage.watching{color:#f4bc77}.signal-stage.invalidated{color:#fa8291}.signal-sub{color:#a3b7cb;font-size:10px;line-height:1.55;margin-top:8px}.signal-prices{margin-top:11px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.signal-prices>div{padding:7px;border-radius:7px;background:#13273a;display:grid;gap:3px;min-width:0}.signal-prices span{color:#9cb2ca;font-size:9px}.signal-prices strong{color:#ebf6ff;font-size:12px;font-variant-numeric:tabular-nums}.signal-gate{margin-top:9px;color:#dbb778;font-size:10px;line-height:1.5}.signal-proof{margin-top:9px;color:#9fbbd0;font-size:10px}.signal-proof summary{cursor:pointer;color:#7ad3f1}.signal-proof p{overflow-wrap:anywhere}.signal-panel .panel-title{flex-wrap:wrap}.signal-group-title{grid-column:1/-1;margin:0 0 2px;font-size:12px;letter-spacing:.8px;color:#8ecce0}@media(max-width:1100px){.signal-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.signal-cards{grid-template-columns:1fr;padding:9px}.signal-controls{gap:6px;padding:11px}.signal-controls label{font-size:10px}.signal-controls select,.signal-controls input{max-width:120px}}
 </style>
 </head>
 <body>
-<header><div class="inner"><div class="identity"><div class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 24 24"><path d="M2 17 9 4l4 8 3-5 6 11M2 20h20"/></svg></div><div><div class="eyebrow">Binance USDT-M · Data Operations</div><div class="brand">Institutional Signal Radar <span>/ Phase 03G</span></div></div></div><div class="top-actions"><span id="topStatus" class="badge" data-state="offline"><i class="dot"></i><span id="topStatusText">OFFLINE</span></span><button id="exportDiagnostics" class="btn ghost" type="button" title="Download lightweight connection, data integrity and analytical summary">Export Summary</button><button id="exportForensic" class="btn ghost" type="button" title="Download complete immutable evidence and event journals (gzip when supported)">Full Forensic</button><button id="retry" class="btn primary" type="button">Retry Sync</button></div></div></header>
+<header><div class="inner"><div class="identity"><div class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 24 24"><path d="M2 17 9 4l4 8 3-5 6 11M2 20h20"/></svg></div><div><div class="eyebrow">Binance USDT-M · Data Operations</div><div class="brand">Institutional Signal Radar <span>/ Phase 04A</span></div></div></div><div class="top-actions"><span id="topStatus" class="badge" data-state="offline"><i class="dot"></i><span id="topStatusText">OFFLINE</span></span><button id="exportDiagnostics" class="btn ghost" type="button" title="Download lightweight connection, data integrity and analytical summary">Export Summary</button><button id="exportForensic" class="btn ghost" type="button" title="Download complete immutable evidence and event journals (gzip when supported)">Full Forensic</button><button id="retry" class="btn primary" type="button">Retry Sync</button></div></div></header>
 <main class="shell">
 <div id="alert" class="alert" role="alert"><div><strong id="alertTitle">Connectivity problem</strong><div class="detail" id="alertDetail"></div></div><button id="dismiss" aria-label="Dismiss notice" type="button">×</button></div>
-<div class="section-title"><div><div class="phase-flag">CONFIRMED STRUCTURE · LIQUIDITY · IMBALANCE · ORDER BLOCKS</div><h1>Institutional Market Observation Terminal</h1><p>Confirmed swings · Liquidity · Fair Value Gaps · Order Blocks · No forecasts.</p></div><div class="phase-flag">READ ONLY · NO SIGNALS · NO ORDERS</div></div>
+<div class="section-title"><div><div class="phase-flag">CONFIRMED STRUCTURE · LIQUIDITY · IMBALANCE · ORDER BLOCKS</div><h1>Live Signal Radar &amp; Market Evidence</h1><p>Read-only LONG / SHORT candidates · Confirmed market evidence · No order execution.</p></div><div class="phase-flag">READ ONLY · SIGNAL OBSERVATIONS · NO ORDERS</div></div>
 <div class="metrics" aria-label="Feed summary"><div class="metric"><div class="label">Market feed</div><div class="value small" id="metricFeed">NOT CONNECTED</div><div class="note" id="metricFeedNote">Awaiting verified messages</div></div><div class="metric"><div class="label">Monitored symbols</div><div class="value" id="metricSymbols">—</div><div class="note">USDT perpetual · liquidity filtered</div></div><div class="metric"><div class="label">Valid timeframe series</div><div class="value" id="metricSeries">—</div><div class="note">4H · 1H · 15m · 5m</div></div><div class="metric"><div class="label">Binance server time</div><div class="value small" id="metricClock">UNSYNCED</div><div class="note" id="metricClockNote">Exchange clock not confirmed</div></div><div class="metric"><div class="label">Snapshot progress</div><div class="value" id="metricProgress">—</div><div class="note" id="metricProgressNote">REST candle batches</div></div></div>
+<section class="panel context-panel signal-panel" aria-labelledby="radarHeading"><div class="panel-title"><div><h2 id="radarHeading">Actionable Signal Radar · Read-Only</h2><div class="subhead">Confirmed 15m reclaim + higher-timeframe direction + closed 5m structure · never order execution</div></div><span class="pill" id="signalCount">0 CONFIRMED · 0 WATCHING</span></div><div class="signal-controls"><label for="signalDirection">Direction</label><select id="signalDirection"><option value="ALL">All</option><option value="LONG">LONG</option><option value="SHORT">SHORT</option></select><label for="signalSymbol">Symbol</label><input id="signalSymbol" placeholder="All 20 symbols" aria-label="Filter signal symbol"/><label for="signalTimeframe">Setup timeframe</label><select id="signalTimeframe"><option value="ALL">All</option><option value="15m">15m</option></select></div><div class="signal-health" id="signalHealth">Awaiting verified analytical context.</div><div class="signal-cards" id="signalCards"><div class="signal-empty">No qualified signals until verified candle and structure evidence becomes available.</div></div><div class="structure-details">WATCHING is not an entry. CONFIRMED requires two observable structural targets and after-cost R:R ≥ 1.8. TRIGGERED means a later candle touched the proposed price zone, not an actual trade. Historical or stale prices are never executable. No predicted success rates; past paper observations do not guarantee future performance.</div></section>
 <div class="layout">
-<section class="panel wide" aria-labelledby="symbolsTitle"><div class="panel-title"><div><h2 id="symbolsTitle">Liquidity Universe</h2><div class="subhead" id="universeCaption">Waiting for verified exchange metadata and 24h turnover</div></div><div class="filters"><input id="search" class="search" type="search" autocomplete="off" placeholder="Filter symbol" aria-label="Filter symbols"><span class="pill" id="symbolCount">0 selected</span></div></div><div class="table-scroll"><table class="table"><thead><tr><th>Symbol</th><th class="num">24H Turnover (USDT)</th><th class="num">Last Closed 5m (USDT)</th><th>5m Close UTC</th><th>Series</th><th>Data Quality</th></tr></thead><tbody id="symbolRows"><tr><td colspan="6" class="dim">No verified Binance symbols loaded.</td></tr></tbody></table></div><div class="hint">Symbols are selected by real 24h quote turnover (minimum 20M USDT). Read-only structure and liquidity observations. No trade signals or forecasts.</div></section>
+<section class="panel wide" aria-labelledby="symbolsTitle"><div class="panel-title"><div><h2 id="symbolsTitle">Liquidity Universe</h2><div class="subhead" id="universeCaption">Waiting for verified exchange metadata and 24h turnover</div></div><div class="filters"><input id="search" class="search" type="search" autocomplete="off" placeholder="Filter symbol" aria-label="Filter symbols"><span class="pill" id="symbolCount">0 selected</span></div></div><div class="table-scroll"><table class="table"><thead><tr><th>Symbol</th><th class="num">24H Turnover (USDT)</th><th class="num">Last Closed 5m (USDT)</th><th>5m Close UTC</th><th>Series</th><th>Data Quality</th></tr></thead><tbody id="symbolRows"><tr><td colspan="6" class="dim">No verified Binance symbols loaded.</td></tr></tbody></table></div><div class="hint">Symbols are selected by real 24h quote turnover (minimum 20M USDT). Signal candidates are read-only observations, not recommendations or guaranteed outcomes.</div></section>
 <div class="stack side"><section class="panel health-panel"><div class="panel-title"><div><h2>Transport & Data Health</h2><div class="subhead">Measured connection conditions, not simulated status</div></div><span class="pill" id="healthPill">NOT VERIFIED</span></div><div class="health-list"><div class="health-row"><span>REST API</span><span id="hRest">NOT TESTED</span></div><div class="health-row"><span>Market WebSocket</span><span id="hWs">NOT CONNECTED</span></div><div class="health-row"><span>WebSocket sessions</span><span id="hWsCount">0 / 0 receiving</span></div><div class="health-row"><span>Verified kline streams</span><span id="hStreamCount">0 / 0 receiving</span></div><div class="health-row"><span>Server clock offset</span><span id="hOffset">—</span></div><div class="health-row"><span>Last valid WS frame</span><span id="hLastFrame">—</span></div><div class="health-row"><span>Queued REST requests</span><span id="hQueue">0</span></div><div class="health-row"><span>REST used weight (1m)</span><span id="hWeight">Unknown</span></div><div class="health-row"><span>Rejected / duplicate bars</span><span id="hRejected">0 / 0</span></div><div class="health-row"><span>Series with gaps</span><span id="hGaps">0</span></div></div></section>
 <section class="panel events-panel"><div class="panel-title"><div><h2>Event Journal</h2><div class="subhead">Connection errors and data integrity events</div></div><span class="pill">UTC</span></div><div class="log" id="log" aria-live="polite"><div class="event"><span class="ts">—</span><span class="type info">INFO</span><span class="msg">Initializing read-only feed infrastructure.</span></div></div></section></div>
 <section class="panel chart-panel"><div class="panel-title chart-head"><div><h2 id="chartTitle">Verified Candle Workspace</h2><div class="subhead" id="chartSubtitle">Select a symbol and timeframe after REST validation</div></div><div class="tabs" role="group" aria-label="Candlestick timeframe"><button class="active" data-tf="5m">5m</button><button data-tf="15m">15m</button><button data-tf="1h">1H</button><button data-tf="4h">4H</button></div></div><div class="chart-meta"><span>Source: <strong>Binance Futures OHLCV</strong></span><span>Display: <strong>Closed candles only</strong></span><span>Timezone: <strong>UTC</strong></span><span id="chartCount">Validated: —</span><span id="chartAnalysisStatus">Structure: NOT VERIFIED</span></div>
@@ -29,17 +32,18 @@
 <section class="panel structure-panel"><div class="panel-title"><div><h2>Confirmed Structure · Four Timeframes</h2><div class="subhead">Independently confirmed events; no forward-looking bars</div></div><span class="pill" id="structureStatus">HISTORICAL / NOT VERIFIED</span></div><div class="structure-grid" id="structureGrid"><div class="dim">Waiting for validated historical candles.</div></div><div class="structure-details" id="structureDetails">Pivot confirmation uses the right-hand closed candles. Displayed historical pivots were not observable before their confirmation UTC.</div></section>
 <section class="panel liquidity-panel"><div class="panel-title"><div><h2>Liquidity Observations · Four Timeframes</h2><div class="subhead">Confirmed swing references and bounded reclaim tests · no institutional order claims</div></div><span class="pill" id="liquidityStatus">UNVERIFIED</span></div><div class="structure-grid" id="liquidityGrid"><div class="dim">Waiting for confirmed market structure.</div></div><div class="structure-details" id="liquidityDetails">Potential price levels are observations, not confirmed resting orders. A sweep requires a closed-candle reclaim.</div></section>
 <section class="panel fvg-panel"><div class="panel-title"><div><h2>Fair Value Gaps · Four Timeframes</h2><div class="subhead">Three confirmed candles · wick-based mitigation · no predictive claims</div></div><span class="pill" id="fvgStatus">UNVERIFIED</span></div><div class="structure-grid" id="fvgGrid"><div class="dim">Waiting for verified closed candles.</div></div><div class="structure-details" id="fvgDetails">Formation is confirmed only after the third candle closes. Future touches never alter the original boundaries.</div></section>
-<section class="panel ob-panel"><div class="panel-title"><div><h2>Order Block Observations · Four Timeframes</h2><div class="subhead">Confirmed BOS / CHoCH sources · conservative wick evidence · not institutional order proof</div></div><span class="pill" id="obStatus">UNVERIFIED</span></div><div class="structure-grid" id="obGrid"><div class="dim">Waiting for confirmed structural breaks.</div></div><div class="structure-details" id="obDetails">Order Blocks become known only at their structural break confirmation. No trading signals are generated.</div></section>
+<section class="panel ob-panel"><div class="panel-title"><div><h2>Order Block Observations · Four Timeframes</h2><div class="subhead">Confirmed BOS / CHoCH sources · conservative wick evidence · not institutional order proof</div></div><span class="pill" id="obStatus">UNVERIFIED</span></div><div class="structure-grid" id="obGrid"><div class="dim">Waiting for confirmed structural breaks.</div></div><div class="structure-details" id="obDetails">Order Blocks become known only at their structural break confirmation. Observations are independent of read-only signal qualification.</div></section>
+
 <section class="panel context-panel"><div class="panel-title"><div><h2>Multi-Timeframe Context · As-Of Safe</h2><div class="subhead">Only confirmed observations available at the UTC cutoff · descriptive, never predictive</div></div><span class="pill" id="contextStatus">UNVERIFIED</span></div><div class="structure-grid" id="contextGrid"><div class="dim">Awaiting independently validated timeframe histories.</div></div><div class="structure-details" id="contextDetails">Evidence links show exact source IDs, versions and confirmation times. Missing context stays unknown.</div></section>
 <section class="panel history-panel" aria-labelledby="historyTitle"><div class="panel-title"><div><h2 id="historyTitle">Durable History &amp; UTC Replay</h2><div class="subhead">IndexedDB checkpoints · verified series coverage · durable forensic history</div></div><span class="pill" id="storageStatus">CHECKING STORAGE</span></div><div class="history-body"><div class="history-info" id="storageDetail" role="status">Checking browser storage permissions. No saved data is treated as LIVE.</div><div class="history-info" id="analysisCoverage" role="status">Analytical bootstrap not started.</div><div class="history-actions"><button type="button" class="btn" id="saveHistory">Save Verified Checkpoint</button><button type="button" class="btn ghost" id="clearHistory">Erase Local Checkpoints…</button></div><div class="history-controls"><label for="replayUtc">Historical cutoff (UTC)</label><input id="replayUtc" type="datetime-local" step="0.001" aria-label="UTC historical replay cutoff"><button type="button" class="btn primary" id="runReplay">Replay As-Of UTC</button><button type="button" class="btn ghost" id="resetReplay">Return to Current Context</button></div><div class="history-info" id="replayStatus">Replay is read-only and never uses unconfirmed future observations.</div><div class="replay-results" id="replayResults"><span class="dim">Choose a verified historical UTC cutoff to inspect archived observations.</span></div></div></section>
-<section class="panel"><div class="panel-title"><div><h2>Selected Instrument</h2><div class="subhead" id="instrumentName">No symbol available</div></div><span class="pill" id="instrumentStatus">NO DATA</span></div><div class="summary"><div class="mini"><label>5m Closed Bars</label><span class="big" id="n5m">—</span><span class="mini-note">Target: 500</span></div><div class="mini"><label>15m Closed Bars</label><span class="big" id="n15m">—</span><span class="mini-note">Target: 400</span></div><div class="mini"><label>1H Closed Bars</label><span class="big" id="n1h">—</span><span class="mini-note">Target: 300</span></div><div class="mini"><label>4H Closed Bars</label><span class="big" id="n4h">—</span><span class="mini-note">Target: 300</span></div></div><div class="hint" id="instrumentHint">Structural observations require validated, contiguous closed-candle history. No market forecasts, signals or orders.</div></section>
+<section class="panel"><div class="panel-title"><div><h2>Selected Instrument</h2><div class="subhead" id="instrumentName">No symbol available</div></div><span class="pill" id="instrumentStatus">NO DATA</span></div><div class="summary"><div class="mini"><label>5m Closed Bars</label><span class="big" id="n5m">—</span><span class="mini-note">Target: 500</span></div><div class="mini"><label>15m Closed Bars</label><span class="big" id="n15m">—</span><span class="mini-note">Target: 400</span></div><div class="mini"><label>1H Closed Bars</label><span class="big" id="n1h">—</span><span class="mini-note">Target: 300</span></div><div class="mini"><label>4H Closed Bars</label><span class="big" id="n4h">—</span><span class="mini-note">Target: 300</span></div></div><div class="hint" id="instrumentHint">Structural observations require validated, contiguous closed-candle history. Signals are read-only hypotheses; no orders are placed.</div></section>
 </div>
-<div class="bottom"><span>Binance Futures Institutional Signal Radar · Phase 3G · Time-aware structure, liquidity, FVG and Order Block context · No trading capability</span><span>API: <a class="subtle-link" href="https://developers.binance.com/en/docs/products/derivatives-trading-usds-futures/general-info" target="_blank" rel="noopener noreferrer">Official Binance Documentation ↗</a> · <span id="browserClock">Browser clock: —</span></span></div>
+<div class="bottom"><span>Binance Futures Institutional Signal Radar · Phase 4A · Read-only evidence-driven signal candidates · No order execution</span><span>API: <a class="subtle-link" href="https://developers.binance.com/en/docs/products/derivatives-trading-usds-futures/general-info" target="_blank" rel="noopener noreferrer">Official Binance Documentation ↗</a> · <span id="browserClock">Browser clock: —</span></span></div>
 </main>
 <script>
 'use strict';
 (() => {
-  // Phase 3G operational resilience of approved Phase 3F history. No signals, accounts or orders.
+  // Phase 4A read-only signal candidates on top of the approved Phase 3G analytical infrastructure.
   const CONFIG = Object.freeze({
     restBase: 'https://fapi.binance.com',
     marketWsBase: 'wss://fstream.binance.com/market/stream?streams=',
@@ -220,7 +224,7 @@
     return Object.freeze({openTime,closeTime,open,high,low,close,volume,quoteVolume,tradeCount,takerBase,takerQuote});
   }
   function candleEqual(a,b){return a.openTime===b.openTime&&['open','high','low','close','volume','quoteVolume','tradeCount','takerBase','takerQuote'].every(k=>Math.abs(a[k]-b[k])<=Math.max(1e-9,Math.abs(a[k])*1e-8));}
-  function newStore(){return {bars:[],lastRestAt:0,lastWsAt:0,provisional:null,lastError:'',duplicates:0,rejected:0,gaps:0,conflicts:0,resyncing:false,lastCheck:0,recoveryRequired:false,lastSnapshotAt:0,snapshotStart:0,snapshotEnd:0,restSnapshots:0,repairedGaps:0};}
+  function newStore(){return {bars:[],lastRestAt:0,lastWsAt:0,lastClosedWsCloseTime:0,provisional:null,lastError:'',duplicates:0,rejected:0,gaps:0,conflicts:0,resyncing:false,lastCheck:0,recoveryRequired:false,lastSnapshotAt:0,snapshotStart:0,snapshotEnd:0,restSnapshots:0,repairedGaps:0};}
   function storeOf(s,tf){const key=keyFor(s,tf);if(!state.stores.has(key))state.stores.set(key,newStore());return state.stores.get(key);}
   function scanGap(bars,ms){let gaps=0;for(let i=1;i<bars.length;i++)if(bars[i].openTime!==bars[i-1].openTime+ms)gaps++;return gaps;}
   function mergeCandles(store,tf,incoming,origin){const old=new Map(store.bars.map(b=>[b.openTime,b]));let newBars=0;
@@ -1155,6 +1159,7 @@
       if(state.structure.pending.size)state.structure.analysisTimer=setTimeout(drain,10);
       else {if(!state.structure.bootstrap.settled&&state.structure.bootstrap.epoch===epoch)
           finishAnalyticalBootstrap(epoch);
+        for(const item of state.symbols)scheduleSignalScan(item.symbol);
         scheduleRender();}
     };
     state.structure.analysisTimer=setTimeout(drain,10);
@@ -1490,6 +1495,509 @@
     }
     return record;
   }
+  // PHASE 4A: evidence-driven, read-only signal candidates. Source engines are untouched.
+  // This is a deterministic research hypothesis, not investment advice or a win probability.
+  const SIGNAL_VERSION='4A.0.3';
+  const SIGNAL_POLICY=Object.freeze({sweepMax15mBars:8,setupMax5mBars:12,triggerMax5mBars:6,
+    entryMax5mBars:3,paperMax5mBars:48,stopAtrBuffer:0.15,stopTicks:3,minNetRR:1.8,feeEachSide:0.0005,
+    slippageEachSide:0.0003,entryAtrTolerance:0.12,maxStopAtr:4,minimumStopTicks:4});
+  const SIGNAL_TERMINAL=new Set(['EXPIRED','INVALIDATED']);
+  state.signals={records:new Map(),lastScanned:new Map(),pendingSave:new Map(),saveSerial:0,saveTimer:null,saveRunning:false,db:null,
+    persistence:'SESSION-ONLY',filter:'ALL',symbolFilter:'',timeframeFilter:'ALL',selectedId:null,
+    lastUpdated:0,blocked:new Map(),scanTimer:null,scanPending:new Set(),historyReady:false,unknownSince:new Map()};
+  const SIGNAL_DB='binance-futures-radar-phase4a-signals',SIGNAL_DB_STORE='journals';
+  function signalFreeze(v){return freezeEvidence(v);}
+  function signalEventId(id,status,at){return `${id}|${status}|${at}`;}
+  function signalTransition(record,status,at,evidence={}){
+    const allowed={WATCHING:['CONFIRMED','EXPIRED','INVALIDATED'],CONFIRMED:['TRIGGERED','EXPIRED','INVALIDATED'],
+      TRIGGERED:['EXPIRED','INVALIDATED']};
+    if(!allowed[record.status]?.includes(status)||!Number.isSafeInteger(at)||
+      at<=record.lastTransitionTime||at<=record.createdAt)return false;
+    const transition=signalFreeze({id:signalEventId(record.id,status,at),signalId:record.id,
+      status,confirmationTime:at,reason:evidence.reason||null,sourceCandle:evidence.sourceCandle?{...evidence.sourceCandle}:null,
+      paper:evidence.paper?structuredClone(evidence.paper):null,
+      qualification:evidence.qualification?structuredClone(evidence.qualification):null});
+    if(record.journal.some(x=>x.id===transition.id))return false;
+    record.journal.push(transition);record.status=status;record.lastTransitionTime=at;
+    if(evidence.paper)record.paper=evidence.paper;
+    signalPersistSoon(record.id);return true;
+  }
+  // Restored events must form a single, strictly ordered, causal chain.
+  function validateSignalJournal(r){
+    if(!r||!r.id||!safeSymbol(r.symbol)||!Array.isArray(r.journal)||!r.journal.length||
+      !Number.isSafeInteger(r.createdAt)||r.journal[0].status!=='WATCHING'||
+      r.journal[0].confirmationTime!==r.createdAt||r.status!==r.journal.at(-1).status||
+      r.lastTransitionTime!==r.journal.at(-1).confirmationTime)return false;
+    const ids=new Set();let prev=-Infinity,terminal=false;
+    for(const [i,e] of r.journal.entries()){
+      if(e.signalId!==r.id||e.id!==signalEventId(r.id,e.status,e.confirmationTime)||
+        !Number.isSafeInteger(e.confirmationTime)||e.confirmationTime<=prev||ids.has(e.id)||terminal)return false;
+      if(i>0&&e.status==='WATCHING')return false;
+      if((e.status==='CONFIRMED'&&r.journal[i-1].status!=='WATCHING')||
+        (e.status==='TRIGGERED'&&r.journal[i-1].status!=='CONFIRMED'))return false;
+      if(!['WATCHING','CONFIRMED','TRIGGERED','EXPIRED','INVALIDATED'].includes(e.status))return false;
+      ids.add(e.id);prev=e.confirmationTime;terminal=SIGNAL_TERMINAL.has(e.status);
+    }
+    const confirmed=r.journal.find(e=>e.status==='CONFIRMED');
+    if((confirmed?.confirmationTime||null)!==(r.confirmationTime||null))return false;
+    return true;
+  }
+  function signalPersistSoon(id){state.signals.pendingSave.set(id,++state.signals.saveSerial);if(state.signals.saveTimer)return;
+    state.signals.saveTimer=setTimeout(()=>{state.signals.saveTimer=null;flushSignals().catch(error=>{
+      state.signals.persistence='SESSION-ONLY';track('events',{level:'warn',message:'Signal journal save failed: '+normalizedError(error)});
+    });},350);}
+  function signalStorageOpen(){return new Promise((resolve,reject)=>{
+    if(!window.indexedDB)return reject(new Error('IndexedDB unavailable'));
+    const req=indexedDB.open(SIGNAL_DB,1);
+    req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(SIGNAL_DB_STORE))
+      req.result.createObjectStore(SIGNAL_DB_STORE,{keyPath:'id'});};
+    req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('Signal storage unavailable'));
+    req.onblocked=()=>reject(new Error('Signal journal database blocked'));
+  });}
+  async function signalStorageInitialize(){try{
+    const db=await signalStorageOpen();state.signals.db=db;
+    const saved=await new Promise((resolve,reject)=>{const tx=db.transaction(SIGNAL_DB_STORE,'readonly'),r=tx.objectStore(SIGNAL_DB_STORE).getAll();
+      r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
+    for(const row of saved){
+      if(row?.schema===2&&typeof row.id==='string'&&row.id.startsWith('cursor|')&&safeSymbol(row.symbol)&&Number.isSafeInteger(row.closeTime)){
+        state.signals.lastScanned.set(row.symbol,row.closeTime);continue;}
+      if(!row||row.schema!==1||!row.record||!Array.isArray(row.record.journal))continue;
+      const r=row.record;if(!validateSignalJournal(r)){track('events',{level:'warn',message:'Rejected non-monotonic persisted signal: '+String(r?.id||'unknown')});continue;}
+      if(!state.signals.records.has(r.id)){
+        for(const e of r.journal)freezeRestoredEvidence(e);
+        state.signals.records.set(r.id,r);
+      }
+    }
+    state.signals.persistence='INDEXEDDB';state.signals.historyReady=true;
+    if(state.signals.pendingSave.size)flushSignals().catch(e=>track('events',{level:'warn',message:'Pending signal save: '+normalizedError(e)}));
+    scheduleRender();
+  }catch(error){state.signals.persistence='SESSION-ONLY';state.signals.historyReady=true;
+    track('events',{level:'warn',message:'Signal history remains session-only: '+normalizedError(error)});}}
+  async function flushSignals(){const s=state.signals;if(!s.db||!s.pendingSave.size||s.saveRunning)return false;
+    s.saveRunning=true;let committed=false;const rows=[...s.pendingSave].map(([id,version])=>id.startsWith('cursor|')?
+      ({id,version,schema:2,symbol:id.slice(7),closeTime:s.lastScanned.get(id.slice(7))}):
+      ({id,version,schema:1,record:structuredClone(s.records.get(id))}));
+    try{await new Promise((resolve,reject)=>{const tx=s.db.transaction(SIGNAL_DB_STORE,'readwrite'),store=tx.objectStore(SIGNAL_DB_STORE);
+      tx.oncomplete=resolve;tx.onabort=()=>reject(tx.error||new Error('Signal transaction aborted'));
+      try{rows.forEach(({id,schema,record,symbol,closeTime})=>store.put(schema===2?{id,schema,symbol,closeTime}:{id,schema,record}));}catch(e){try{tx.abort();}catch{}reject(e);}});
+      committed=true;rows.forEach(x=>{if(s.pendingSave.get(x.id)===x.version)s.pendingSave.delete(x.id);});return true;
+    }finally{s.saveRunning=false;if(committed&&s.pendingSave.size&&!s.saveTimer){s.saveTimer=setTimeout(()=>{
+      s.saveTimer=null;flushSignals().catch(error=>track('events',{level:'error',message:'Signal save: '+normalizedError(error)}));
+    },1000);}}
+  }
+  const signalLatest=(arr,t,selector=x=>x.sourceConfirmationTime)=>{
+    if(!Array.isArray(arr))return null;
+    const end=upperBound(arr,t,selector);return end?arr[end-1]:null;
+  };
+  function directionAt(idx,t){const l=signalLatest(idx.structureTimeline,t,x=>x.time);return l?.bias||'NEUTRAL';}
+  function verifiedSignalSources(symbol,cutoff){
+    const sources={};for(const tf of CONFIG.tfOrder){const selected=sourceIndexAsOf(symbol,tf,cutoff);
+      const idx=selected.idx,expect=Math.floor((cutoff+1)/CONFIG.timeframes[tf].ms)*CONFIG.timeframes[tf].ms-1;
+      if(!idx||!Number.isFinite(idx.firstClosedAt)||idx.firstClosedAt>cutoff||idx.lastClosedAt<expect)
+        return {reason:`${tf.toUpperCase()}: ${selected.error||'INSUFFICIENT VERIFIED AS-OF HISTORY'}`};
+      sources[tf]=idx;
+    }
+    return {sources};
+  }
+  function lastQualifiedSweep(idx,t){const arr=idx.sweeps;const end=upperBound(arr,t,x=>x.sourceConfirmationTime);
+    for(let i=end-1;i>=Math.max(0,end-20);i--){const sw=arr[i];
+      if(t-sw.sourceConfirmationTime>SIGNAL_POLICY.sweepMax15mBars*CONFIG.timeframes['15m'].ms)break;
+      if(sw.eventType==='SWEEP_CONFIRMED')return sw;
+    }return null;
+  }
+  function matchedZoneEvidence(idx,t,side,referencePrice){const candidates=[...activeZonesAsOf(idx,'fvg',t),...activeZonesAsOf(idx,'orderBlocks',t)]
+    .filter(z=>z.side===side&&z.confirmationTime<=t&&z.lower<=referencePrice&&z.upper>=referencePrice);
+    return candidates.sort((a,b)=>b.confirmationTime-a.confirmationTime)[0]||null;
+  }
+  function observedTargets(sources,side,entry,cutoff){
+    const candidates=[];
+    for(const tf of ['15m','1h','4h']){
+      const idx=sources[tf],ticks=idx.source.structure;
+      for(let i=ticks.length-1;i>=0;i--){const ev=ticks[i];if(ev.confirmationTime>cutoff||ev.type!=='PIVOT'||
+        ev.side!==(side==='LONG'?'HIGH':'LOW'))continue;
+        if(side==='LONG'?ev.price>entry:ev.price<entry)candidates.push({price:ev.price,id:ev.id,time:ev.confirmationTime,tf});
+      }
+      // Liquidity levels may provide independent observed target regions.
+      for(const z of activeZonesAsOf(idx,'liquidity',cutoff)){
+        const p=side==='LONG'?z.lower:z.upper;
+        if(side==='LONG'?p>entry:p<entry)candidates.push({price:p,id:z.source.sourceEventId,time:z.confirmationTime,tf});
+      }
+    }
+    const ordered=candidates.sort((a,b)=>Math.abs(a.price-entry)-Math.abs(b.price-entry)||a.id.localeCompare(b.id));
+    return ordered.filter((x,i)=>ordered.findIndex(y=>Math.abs(y.price-x.price)<Math.abs(entry)*1e-9)===i);
+  }
+  // Price rounding is conservative: worst entry and stops widen exposure,
+  // observed targets move toward the entry, never beyond the observed level.
+  function signalRiskGeometry({side,entry,stop,targets,tickSize,atr,entryZone}){
+    if(!['LONG','SHORT'].includes(side)||![entry,stop,tickSize].every(x=>Number.isFinite(x)&&x>0)||
+      !Array.isArray(targets)||!targets.length)return {reason:'INVALID PRICE/TICK GEOMETRY'};
+    const decimals=Math.max(0,Math.min(12,(String(tickSize).split('.')[1]||'').length));
+    const snap=(v,up)=>Number(((up?Math.ceil(v/tickSize-1e-9):Math.floor(v/tickSize+1e-9))*tickSize).toFixed(decimals));
+    const e=snap(entry,side==='SHORT'),sl=snap(stop,side==='SHORT');
+    const radius=entryZone?null:Math.max(tickSize,Number.isFinite(atr)&&atr>0?atr*SIGNAL_POLICY.entryAtrTolerance:tickSize);
+    const rawLower=entryZone?entryZone.lower:entry-radius,rawUpper=entryZone?entryZone.upper:entry+radius;
+    if(![rawLower,rawUpper].every(v=>Number.isFinite(v)&&v>0)||rawLower>=rawUpper)return {reason:'INVALID ENTRY ZONE'};
+    const lower=snap(rawLower,false),upper=snap(rawUpper,true);
+    const worst=side==='LONG'?upper:lower;
+    const risk=Math.abs(worst-sl),costRate=2*(SIGNAL_POLICY.feeEachSide+SIGNAL_POLICY.slippageEachSide);
+    if(!(lower>0&&lower<=e&&e<=upper&&upper>lower)||
+      (side==='LONG'?sl>=lower:sl<=upper)||risk<tickSize*SIGNAL_POLICY.minimumStopTicks)
+      return {reason:'CROSSED STOP, ENTRY ZONE OR MINIMUM STOP DISTANCE'};
+    const eligible=targets.filter(t=>t&&Number.isFinite(t.price)&&t.price>0&&typeof t.id==='string')
+      .map(t=>({...t,price:snap(t.price,side==='SHORT')}))
+      .filter(t=>side==='LONG'?t.price>upper:t.price<lower)
+      .map(t=>({...t,rr:(Math.abs(t.price-worst)-costRate*worst)/(risk+costRate*worst)}))
+      .filter(t=>Number.isFinite(t.rr)&&t.rr>=SIGNAL_POLICY.minNetRR);
+    if(eligible.length<2||eligible[0].price===eligible[1].price||
+      (side==='LONG'?eligible[0].price>=eligible[1].price:eligible[0].price<=eligible[1].price))
+      return {reason:'TWO DISTINCT ORDERED TARGETS FAIL WORST-ENTRY AFTER-COST R:R'};
+    return {entry:e,entryZone:{lower,upper},worstEntry:worst,stop:sl,tp1:eligible[0],tp2:eligible[1],
+      netRR1:eligible[0].rr,netRR2:eligible[1].rr,feeEachSide:SIGNAL_POLICY.feeEachSide,
+      slippageEachSide:SIGNAL_POLICY.slippageEachSide};
+  }
+  // Pure deterministic rule core, independently fixture-testable. Every argument
+  // is a source observation known by cutoff; no source tracker is modified.
+  function qualifySignalObservation(ob){
+    if(!ob?.valid)return {status:'NO SIGNAL',reason:ob?.reason||'MISSING VERIFIED SOURCE'};
+    if(ob.htf4!==ob.direction||ob.htf1!==ob.direction)return {status:'NO SIGNAL',reason:'4H AND 1H CONFIRMED DIRECTIONS DO NOT ALIGN'};
+    if(ob.sweepConfirmation>ob.cutoff||ob.sweepConfirmation<ob.cutoff-SIGNAL_POLICY.setupMax5mBars*CONFIG.timeframes['5m'].ms)
+      return {status:'NO SIGNAL',reason:'15M SWEEP OUTSIDE 5M OBSERVATION WINDOW'};
+    if(!ob.sweepId)return {status:'NO SIGNAL',reason:'NO CONFIRMED 15M SWEEP'};
+    if(ob.structure15&&ob.structure15!==ob.direction)return {status:'NO SIGNAL',reason:'15M CONFIRMED STRUCTURE OPPOSES SETUP'};
+    if(!ob.triggerId||ob.triggerConfirmation<ob.sweepConfirmation||ob.triggerConfirmation!==ob.cutoff)
+      return {status:'WATCHING',reason:'AWAITING NEW CLOSED 5M DIRECTIONAL BOS/CHOCH'};
+    if(!ob.atr||!Number.isFinite(ob.atr)||ob.atr<=0)return {status:'WATCHING',reason:'INSUFFICIENT PRIOR 5M ATR'};
+    const geometry=signalRiskGeometry(ob);
+    if(geometry.reason)return {status:'WATCHING',reason:geometry.reason};
+    // Validate the maximum structural stop distance from the least favorable
+    // *rounded permitted entry*, not from the nominal center.
+    if(Math.abs(geometry.worstEntry-geometry.stop)>ob.atr*SIGNAL_POLICY.maxStopAtr)
+      return {status:'WATCHING',reason:'WORST-ZONE STRUCTURAL STOP EXCEEDS ATR LIMIT'};
+    return {status:'CONFIRMED',geometry,reason:'CLOSED 5M STRUCTURAL TRIGGER AND OBSERVABLE RISK GEOMETRY'};
+  }
+  function signalObservationAt(symbol,bar){
+    const t=bar.closeTime,sourced=verifiedSignalSources(symbol,t);
+    if(sourced.reason)return {reason:sourced.reason};
+    const ix=sourced.sources,htf4=directionAt(ix['4h'],t),htf1=directionAt(ix['1h'],t);
+    if(htf4==='NEUTRAL'||htf4!==htf1)return {reason:'4H AND 1H HAVE NO ALIGNED CONFIRMED DIRECTION'};
+    const side=htf4==='BULLISH'?'LONG':'SHORT',direction=htf4;
+    const s15=lastQualifiedSweep(ix['15m'],t);
+    if(!s15||s15.direction!==(side==='LONG'?'LOWER':'UPPER'))return {reason:'NO RECENT CONFIRMED 15M OPPOSITE-SIDE SWEEP'};
+    const event15=ix['15m'].source.liquidity.find(e=>e.id===s15.sourceEventId);
+    if(!event15)return {reason:'15M SWEEP SOURCE EVIDENCE UNAVAILABLE'};
+    const struct15=directionAt(ix['15m'],t);
+    const relevant5=ix['5m'].structuralBreaks.filter(x=>x.sourceConfirmationTime>=s15.sourceConfirmationTime&&
+      x.sourceConfirmationTime<=t&&x.direction===direction&&x.sourceConfirmationTime>s15.sourceConfirmationTime);
+    const trigger=relevant5.at(-1)||null;
+    // Risk is anchored to observed sweep excursion, never hypothetical orders.
+    const tick=state.structure.records.get(keyFor(symbol,'5m'))?.tracker?.tickSize;
+    const seq5=ix['5m'].source.structure;
+    const history=state.structure.records.get(keyFor(symbol,'5m'))?.priceHistory||[];
+    const pos=upperBound(history,t,x=>x.closeTime);
+    // Strictly prior ATR(14): never use the 5m confirmation candle itself.
+    let atr=null;if(pos>=16){let sum=0;for(let i=pos-15;i<pos-1;i++){
+      const b=history[i],prior=history[i-1];if(!b||!prior){sum=NaN;break;}
+      sum+=Math.max(b.high-b.low,Math.abs(b.high-prior.close),Math.abs(b.low-prior.close));
+    }if(Number.isFinite(sum))atr=sum/14;}
+    const excursion=event15.excursionPrice;
+    const stopBuffer=Math.max(Number.isFinite(tick)?tick*SIGNAL_POLICY.stopTicks:0,atr?atr*SIGNAL_POLICY.stopAtrBuffer:0);
+    const stop=side==='LONG'?excursion-stopBuffer:excursion+stopBuffer;
+    const targets=observedTargets(ix,side,bar.close,t);
+    const zone=matchedZoneEvidence(ix['15m'],t,direction,bar.close);
+    const evidence=[s15.sourceEventId,trigger?.sourceEventId,zone?.source?.sourceEventId].filter(Boolean);
+    const revisionVector=CONFIG.tfOrder.map(tf=>`${tf}:${ix[tf].revision}`).join('|');
+    const evaluation=qualifySignalObservation({valid:true,direction,htf4,htf1,structure15:struct15,
+      sweepId:s15.sourceEventId,sweepConfirmation:s15.sourceConfirmationTime,triggerId:trigger?.sourceEventId,
+      triggerConfirmation:trigger?.sourceConfirmationTime,cutoff:t,side,entry:bar.close,stop,
+      targets,tickSize:tick,atr});
+    return {evaluation,side,bar,trigger,zone,sweep:event15,sweepNode:s15,revisionVector,evidence,
+      reason:evaluation.reason,level:excursion,atr,stopBuffer,tickSize:tick};
+  }
+  // Advance already-known candidates even when the originating sweep no longer
+  // appears in the bounded recent-evidence lookup. A restored WATCHING record
+  // therefore cannot remain active forever after an interrupted session.
+  function advanceExistingSignals(symbol,bar){
+    for(const r of state.signals.records.values()){
+      if(r.symbol!==symbol||SIGNAL_TERMINAL.has(r.status)||bar.closeTime<=r.lastTransitionTime)continue;
+      if(r.status==='WATCHING'){
+        if(bar.closeTime-r.createdAt>SIGNAL_POLICY.setupMax5mBars*CONFIG.timeframes['5m'].ms)
+          signalTransition(r,'EXPIRED',bar.closeTime,{reason:'5M QUALIFICATION WINDOW EXPIRED',sourceCandle:bar});
+        continue;
+      }
+      if(!r.confirmationTime||bar.closeTime<=r.confirmationTime)continue;
+      const adverse=r.side==='LONG'?bar.low<=r.stop:bar.high>=r.stop;
+      if(adverse){signalTransition(r,'INVALIDATED',bar.closeTime,{reason:'OBSERVED STOP / INVALIDATION (PRIORITY OVER TARGET)',
+        sourceCandle:bar,paper:r.status==='TRIGGERED'?{result:'STOP OBSERVED',observedAt:bar.closeTime}:null});continue;}
+      if(r.status==='CONFIRMED'){
+        if(bar.closeTime-r.confirmationTime>SIGNAL_POLICY.entryMax5mBars*CONFIG.timeframes['5m'].ms){
+          signalTransition(r,'EXPIRED',bar.closeTime,{reason:'ENTRY WINDOW EXPIRED',sourceCandle:bar});continue;}
+        if(bar.high>=r.entryZone.lower&&bar.low<=r.entryZone.upper){
+          const targetAtEntry=r.side==='LONG'?bar.high>=r.tp1:bar.low<=r.tp1;
+          if(targetAtEntry){signalTransition(r,'EXPIRED',bar.closeTime,{reason:'ENTRY AND TARGET ORDER UNKNOWN IN SAME CANDLE',
+            sourceCandle:bar,paper:{result:'AMBIGUOUS — NO TARGET CREDIT',observedAt:bar.closeTime}});continue;}
+          signalTransition(r,'TRIGGERED',bar.closeTime,{reason:'LATER BAR CROSSED PROPOSED ENTRY ZONE — PAPER ONLY',sourceCandle:bar});
+          continue;
+        }
+      }else if(r.status==='TRIGGERED'){
+        if(bar.closeTime-r.confirmationTime>SIGNAL_POLICY.paperMax5mBars*CONFIG.timeframes['5m'].ms){
+          signalTransition(r,'EXPIRED',bar.closeTime,{reason:'PAPER OBSERVATION TIME LIMIT',sourceCandle:bar});continue;}
+        const t2=r.side==='LONG'?bar.high>=r.tp2:bar.low<=r.tp2;
+        const t1=r.side==='LONG'?bar.high>=r.tp1:bar.low<=r.tp1;
+        if(t1||t2)signalTransition(r,'EXPIRED',bar.closeTime,{reason:'PAPER TARGET PRICE OBSERVED',
+          sourceCandle:bar,paper:{result:t2?'TP2 PRICE OBSERVED':'TP1 PRICE OBSERVED',observedAt:bar.closeTime}});
+      }
+    }
+  }
+  function ingestSignalObservation(symbol,bar){
+    const o=signalObservationAt(symbol,bar);
+    if(!o.evaluation||o.evaluation.status==='NO SIGNAL'){state.signals.blocked.set(symbol,o.reason||'NO QUALIFIED SETUP');return null;}
+    const signalId=`4A|${symbol}|15m|${o.side}|${o.sweep.id}|${o.revisionVector}`;
+    let record=state.signals.records.get(signalId);
+    if(!record){record={id:signalId,version:SIGNAL_VERSION,symbol,side:o.side,setupTf:'15m',triggerTf:'5m',
+      status:'WATCHING',createdAt:bar.closeTime,confirmationTime:null,lastTransitionTime:bar.closeTime,
+      sweepId:o.sweep.id,triggerId:null,revisionVector:o.revisionVector,verifiedTickSize:o.tickSize,
+      entry:null,entryZone:null,stop:null,tp1:null,tp2:null,netRR1:null,netRR2:null,
+      evidenceIds:[o.sweepNode.sourceEventId],qualityChecks:null,reason:'CONFIRMED 15M RECLAIM; AWAITING 5M TRIGGER',
+      sourceCandle:{...bar},paper:null,journal:[signalFreeze({id:signalEventId(signalId,'WATCHING',bar.closeTime),signalId,status:'WATCHING',
+      confirmationTime:bar.closeTime,reason:'CONFIRMED 15M RECLAIM',sourceCandle:{...bar}})]};
+      state.signals.records.set(signalId,record);signalPersistSoon(signalId);
+    }
+    if(SIGNAL_TERMINAL.has(record.status))return record;
+    const age=bar.closeTime-record.createdAt;
+    if(record.status==='WATCHING'&&age>SIGNAL_POLICY.setupMax5mBars*CONFIG.timeframes['5m'].ms){
+      signalTransition(record,'EXPIRED',bar.closeTime,{reason:'5M CONFIRMATION WINDOW EXPIRED',sourceCandle:bar});return record;}
+    if(record.status==='WATCHING'&&o.evaluation.status==='CONFIRMED'){
+      if(bar.closeTime<=record.lastTransitionTime||bar.closeTime<=record.createdAt)return record;
+      if(!signalFreshCandle(symbol,bar)){
+        state.signals.blocked.set(symbol,'HISTORICAL 5M TRIGGER OBSERVED; LIVE FEED GATE NOT SATISFIED');
+        return record;
+      }
+      const g=o.evaluation.geometry;
+      record.entry=g.entry;record.stop=g.stop;record.tp1=g.tp1.price;record.tp2=g.tp2.price;
+      record.netRR1=g.netRR1;record.netRR2=g.netRR2;record.entryZone={...g.entryZone};
+      record.confirmationTime=bar.closeTime;record.triggerId=o.trigger.sourceEventId;
+      record.evidenceIds=[...new Set([...record.evidenceIds,...o.evidence,g.tp1.id,g.tp2.id])];
+      record.qualityChecks={htf:2,confirmedSweep:1,trigger:1,zone:o.zone?1:0,maximum:5};
+      record.reason='4H/1H ALIGN · CONFIRMED 15M RECLAIM · CLOSED 5M BREAK · TWO VERIFIED TARGETS';
+      signalTransition(record,'CONFIRMED',bar.closeTime,{reason:record.reason,sourceCandle:bar,
+        qualification:{entry:record.entry,entryZone:record.entryZone,stop:record.stop,tp1:record.tp1,tp2:record.tp2,
+          netRR1:record.netRR1,netRR2:record.netRR2,triggerId:record.triggerId,
+          evidenceIds:[...record.evidenceIds],qualityChecks:record.qualityChecks,revisionVector:record.revisionVector}});
+      return record;
+    }
+    return record;
+  }
+  function markUnverifiableSignalGap(symbol,at,reason){
+    state.signals.blocked.set(symbol,reason);state.signals.unknownSince.set(symbol,at);
+    for(const r of state.signals.records.values()){
+      if(r.symbol!==symbol||SIGNAL_TERMINAL.has(r.status)||at<=r.lastTransitionTime)continue;
+      signalTransition(r,'EXPIRED',at,{reason:'PAPER OUTCOME UNKNOWN / UNVERIFIED: '+reason,
+        paper:{result:'UNKNOWN — MISSING VERIFIED 5M INTERVAL',observedAt:at}});
+    }
+  }
+  function revalidateSignalRevisions(symbol){
+    for(const r of state.signals.records.values()){
+      if(r.symbol!==symbol||SIGNAL_TERMINAL.has(r.status))continue;
+      const reason=signalSourceValidity(r);
+      if(!reason?.includes('SUPERSEDED'))continue;
+      // Correction knowledge UTC, not the exchange's earlier affected candle UTC.
+      const at=Date.now()+(Number.isFinite(state.timeOffset)?state.timeOffset:0);
+      if(at>r.lastTransitionTime)signalTransition(r,'INVALIDATED',at,{reason:'SOURCE REVISION INVALIDATED · '+reason});
+    }
+  }
+  function scanSignalSymbol(symbol){
+    if(!state.signals.historyReady||!state.symbols.some(x=>x.symbol===symbol)||!state.ready||!timeOK())return;
+    for(const tf of CONFIG.tfOrder)if(inspectStore(state.stores.get(keyFor(symbol,tf)),tf)!=='VALID'){
+      state.signals.blocked.set(symbol,`${tf.toUpperCase()} VERIFIED CANDLE GATE NOT READY`);return;}
+    const source=state.structure.records.get(keyFor(symbol,'5m'));
+    const history=source?.priceHistory;
+    const last=state.stores.get(keyFor(symbol,'5m'))?.bars.at(-1);
+    if(!Array.isArray(history)||!history.length||!last||history.at(-1).closeTime!==last.closeTime){
+      state.signals.blocked.set(symbol,'PAPER OUTCOME UNKNOWN / UNVERIFIED — FULL 5M WITNESSES UNAVAILABLE');
+      state.signals.unknownSince.set(symbol,Date.now());return;}
+    const step=CONFIG.timeframes['5m'].ms;
+    revalidateSignalRevisions(symbol);
+    const stored=state.signals.lastScanned.get(symbol)||0;
+    const active=[...state.signals.records.values()].filter(r=>r.symbol===symbol&&!SIGNAL_TERMINAL.has(r.status));
+    // With a legacy journal but no cursor, begin from the earliest open signal.
+    // A fresh installation only observes the latest candle; it does not issue
+    // backdated "live" confirmations from an old REST bootstrap.
+    const derived=active.length?Math.min(...active.map(r=>r.lastTransitionTime-step)):history.at(-1).closeTime-step;
+    const prior=stored||derived;
+    const latest=history.at(-1).closeTime;
+    // A corrupt/future cursor is not proof of any market observation. It must
+    // not strand subsequent scans forever. Resynchronize to the last VERIFIED
+    // closed witness, record the unknown interval, and require a NEW WS-closed
+    // candle for the next live qualification.
+    const badCursor=!!stored&&(!Number.isSafeInteger(stored)||stored<0||
+      stored>latest||((stored+1)%step)!==((latest+1)%step));
+    const missingStart=!!prior&&history[0].closeTime>prior+step;
+    const recent=history.filter(x=>x.closeTime>prior);
+    let expected=prior+step;
+    const internalGap=recent.some(b=>{const gap=b.closeTime!==expected;expected=b.closeTime+step;return gap;});
+    if(badCursor||missingStart||internalGap){
+      const reason=badCursor?'UNTRUSTED OR FUTURE PERSISTED 5M CURSOR':
+        'VERIFIED SOURCE WITNESS GAP DURING DOWNTIME';
+      // UNKNOWN is discovered *now* during reconciliation, not at the earlier
+      // exchange candle close. Keep knowledge time distinct from cursor time.
+      const discoveredAt=Math.max(latest,Date.now()+(Number.isFinite(state.timeOffset)?state.timeOffset:0));
+      markUnverifiableSignalGap(symbol,discoveredAt,reason);
+      // Skipped candles are never replayed as valid entries or paper wins.
+      // The resynchronization point is itself the latest verified *historical*
+      // boundary; only a subsequently delivered live candle can qualify.
+      state.signals.lastScanned.set(symbol,latest);
+      signalPersistSoon('cursor|'+symbol);
+      state.signals.lastUpdated=Date.now();
+      track('events',{level:'warn',message:`${symbol} signal scan resynchronized at ${new Date(latest).toISOString()}: ${reason}`});
+      return;
+    }
+    if(!recent.length)return;
+    // If an update arrives from a newly restored REST window, it may advance
+    // earlier paper observations, but cannot announce a historical trigger.
+    for(const bar of recent){try{
+      advanceExistingSignals(symbol,bar);
+      if(signalFreshCandle(symbol,bar))ingestSignalObservation(symbol,bar);
+      state.signals.lastScanned.set(symbol,bar.closeTime);
+      signalPersistSoon('cursor|'+symbol);
+    }catch(error){state.signals.blocked.set(symbol,'ANALYTICAL SCAN ERROR: '+normalizedError(error));
+      track('events',{level:'error',message:symbol+' signal scan: '+normalizedError(error)});return;}}
+    state.signals.unknownSince.delete(symbol);
+    state.signals.lastUpdated=Date.now();
+    if(!state.signals.blocked.get(symbol)?.includes('SOURCE REVISION'))state.signals.blocked.delete(symbol);
+  }
+  function scheduleSignalScan(symbol){if(!symbol||!safeSymbol(symbol))return;
+    state.signals.scanPending.add(symbol);
+    if(state.signals.scanTimer)return;
+    state.signals.scanTimer=setTimeout(()=>{state.signals.scanTimer=null;
+      for(const item of [...state.signals.scanPending].slice(0,4)){state.signals.scanPending.delete(item);scanSignalSymbol(item);}
+      if(state.signals.scanPending.size)scheduleSignalScan([...state.signals.scanPending][0]);
+      scheduleRender();},35);
+  }
+  function signalFreshCandle(symbol,bar){
+    const last=state.stores.get(keyFor(symbol,'5m'))?.bars?.at(-1);
+    const utc=Date.now()+(Number.isFinite(state.timeOffset)?state.timeOffset:0);
+    return showState().status==='live'&&timeOK()&&!!last&&last.closeTime===bar.closeTime&&
+      state.stores.get(keyFor(symbol,'5m'))?.lastClosedWsCloseTime===bar.closeTime&&
+      utc>=bar.closeTime&&utc-bar.closeTime<CONFIG.timeframes['5m'].ms;
+  }
+  function signalSourceValidity(record){
+    if(!record?.revisionVector)return 'MISSING SOURCE REVISION VECTOR';
+    const cut=Math.max(record.confirmationTime||record.createdAt,record.createdAt);
+    const indexes=[];
+    for(const tf of CONFIG.tfOrder){
+      const x=sourceIndexAsOf(record.symbol,tf,Date.now()+(state.timeOffset||0));
+      if(!x.idx||`${tf}:${x.idx.revision}`!==record.revisionVector.split('|').find(v=>v.startsWith(tf+':')))
+        return `${tf.toUpperCase()} SOURCE REVISION SUPERSEDED / UNVERIFIED`;
+      indexes.push(x.idx);
+    }
+    const known=new Set();for(const idx of indexes)for(const engine of ['structure','liquidity','fvg','orderBlocks'])
+      for(const ev of idx.source?.[engine]||[])if(ev.confirmationTime<=cut)known.add(ev.id);
+    const evidence=[...new Set([...(record.evidenceIds||[]),record.triggerId].filter(Boolean))];
+    if(!evidence.length||evidence.some(id=>!known.has(id)))return 'SOURCE EVIDENCE ID MISSING OR SUPERSEDED';
+    const r=state.structure.records.get(keyFor(record.symbol,'5m'));
+    const history=r?.priceHistory||[];
+    // Approved Phase 3G compact witnesses intentionally omit `open`.
+    // Compare *all* properties that witness actually proves, including both
+    // time bounds, and use verified durable OHLCV tuples for the extra Open
+    // comparison only when full-source provenance exists.
+    const fullVerified=!!r?.fullSourceComplete&&verifiedFullSource(r);
+    const tuples=fullVerified?r.fullSourceTuples:null;
+    for(const e of record.journal||[]){
+      if(!e.sourceCandle)continue;
+      const source=e.sourceCandle;
+      const bar=history.find(b=>b.closeTime===source.closeTime);
+      if(!bar||!['openTime','closeTime','high','low','close'].every(k=>
+        Number.isFinite(source[k])&&bar[k]===source[k]))
+        return 'ORIGINAL CLOSED 5M CANDLE EVIDENCE NO LONGER VERIFIED';
+      if(tuples&&Object.hasOwn(source,'open')){
+        const original=tuples.find(b=>b[1]===source.closeTime);
+        if(!original||original[0]!==source.openTime||original[2]!==source.open||
+          original[3]!==source.high||original[4]!==source.low||original[5]!==source.close)
+          return 'ORIGINAL CLOSED 5M OHLCV SOURCE TUPLE NO LONGER VERIFIED';
+      }
+    }
+    if(Number.isFinite(record.verifiedTickSize)){
+      const currentTick=state.symbols.find(x=>x.symbol===record.symbol)?.tickSize;
+      if(!Number.isFinite(currentTick)||currentTick!==record.verifiedTickSize)
+        return 'VERIFIED EXCHANGE TICK SIZE CHANGED / UNAVAILABLE';
+    }
+    return null;
+  }
+  function signalExecutable(record){if(record.status!=='CONFIRMED'||!signalFreshCandle(record.symbol,{closeTime:record.confirmationTime}))return false;
+    if(signalSourceValidity(record))return false;
+    const src=state.stores.get(keyFor(record.symbol,'5m'));
+    return !!src&&inspectStore(src,'5m')==='VALID'&&
+      Number.isFinite(record.entryZone?.lower)&&Number.isFinite(record.entryZone?.upper)&&
+      record.netRR1>=SIGNAL_POLICY.minNetRR&&record.netRR2>=SIGNAL_POLICY.minNetRR;
+  }
+  function signalStatusSummary(){const current=new Set(state.symbols.map(x=>x.symbol));const rs=[...state.signals.records.values()].filter(r=>current.has(r.symbol));
+    const active=rs.filter(r=>!SIGNAL_TERMINAL.has(r.status));return {all:rs.length,watching:active.filter(r=>r.status==='WATCHING').length,
+      confirmed:active.filter(r=>r.status==='CONFIRMED').length,triggered:active.filter(r=>r.status==='TRIGGERED').length,
+      historical:rs.filter(r=>SIGNAL_TERMINAL.has(r.status)).length};}
+  function signalElement(tag,txt,cls){const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=txt;return el;}
+  function renderSignalRadar(){const root=$('signalCards');if(!root)return;
+    const summary=signalStatusSummary(),health=showState();
+    $('signalCount').textContent=`${summary.confirmed} CONFIRMED · ${summary.watching} WATCHING · ${summary.triggered} TRIGGERED`;
+    $('signalHealth').textContent=`${health.caption} · ${state.signals.persistence} SIGNAL HISTORY · ${state.signals.lastUpdated?new Date(state.signals.lastUpdated).toISOString():'NO VERIFIED SIGNAL SCAN'}`;
+    const current=new Set(state.symbols.map(x=>x.symbol));const filter=state.signals.filter;
+    const rs=[...state.signals.records.values()].filter(r=>current.has(r.symbol)&&
+      (filter==='ALL'||r.side===filter)&&r.symbol.includes(state.signals.symbolFilter.toUpperCase())&&
+      (state.signals.timeframeFilter==='ALL'||r.setupTf===state.signals.timeframeFilter))
+      .sort((a,b)=>(SIGNAL_TERMINAL.has(a.status)?1:0)-(SIGNAL_TERMINAL.has(b.status)?1:0)||b.lastTransitionTime-a.lastTransitionTime).slice(0,45);
+    root.replaceChildren();if(!rs.length){
+      const explanations=[...state.signals.blocked].filter(([sym])=>current.has(sym)).slice(0,6)
+        .map(([sym,reason])=>`${sym}: ${reason}`).join(' · ');
+      root.append(signalElement('div',`NO SIGNAL · ${health.caption}. ${explanations||'No verified setups yet.'} The radar does not fabricate setups.`, 'signal-empty'));return;}
+    let previousGroup='';
+    for(const r of rs){const group=SIGNAL_TERMINAL.has(r.status)?'PAPER / CLOSED HISTORY':r.status==='WATCHING'?'DEVELOPING · WATCHING':'CONFIRMED / OBSERVED ENTRY';
+      if(group!==previousGroup){const heading=signalElement('h3',group,'signal-group-title');root.append(heading);previousGroup=group;}
+      const card=document.createElement('article');card.className='signal-card '+r.side.toLowerCase();
+      const head=document.createElement('div');head.className='signal-head';
+      head.append(signalElement('strong',r.symbol+' · '+r.side),signalElement('span',r.status,'signal-stage '+r.status.toLowerCase()));card.append(head);
+      card.append(signalElement('div',`15m setup · 5m trigger · ${new Date(r.lastTransitionTime).toISOString()} UTC`,'signal-sub'));
+      if(r.confirmationTime){const risk=document.createElement('div');risk.className='signal-prices';
+        for(const [label,price] of [['ENTRY',r.entry],['STOP / INVALIDATION',r.stop],['TP 1',r.tp1],['TP 2',r.tp2]]){
+          const cell=document.createElement('div');cell.append(signalElement('span',label),signalElement('strong',formatPrice(price)));risk.append(cell);}card.append(risk);
+        card.append(signalElement('div',`After-cost R:R ${fmt(r.netRR1)} / ${fmt(r.netRR2)} · ${r.qualityChecks?.htf+r.qualityChecks?.confirmedSweep+r.qualityChecks?.trigger+r.qualityChecks?.zone||0}/5 evidence checks · NOT win probability`,'signal-sub'));
+      }
+      card.append(signalElement('div',r.reason||'Observation pending','signal-sub'));
+      card.append(signalElement('div',signalExecutable(r)?'FRESH VERIFIED ENTRY WINDOW':
+        ('NOT CURRENTLY EXECUTABLE · '+((r.status==='CONFIRMED'&&signalSourceValidity(r))||'HISTORICAL / WAITING / STALE')),'signal-gate'));
+      const detail=document.createElement('details');detail.className='signal-proof';detail.append(signalElement('summary','Inspect immutable evidence and lifecycle'));
+      detail.append(signalElement('p',`Signal ID: ${r.id} · Source sweep: ${r.sweepId} · Trigger: ${r.triggerId||'not confirmed'} · Source candle closes: ${new Date(r.sourceCandle.closeTime).toISOString()}`));
+      detail.append(signalElement('p',`Evidence IDs: ${r.evidenceIds.join(' | ')||'none'} · Revision vector ${r.revisionVector}`));
+      for(const ev of r.journal)detail.append(signalElement('p',`${ev.status} · ${new Date(ev.confirmationTime).toISOString()} · ${ev.reason||''}`));
+      if(r.paper)detail.append(signalElement('p',`PAPER OBSERVATION ONLY · ${r.paper.result} at ${new Date(r.paper.observedAt).toISOString()}`));
+      card.append(detail);root.append(card);
+    }
+  }
+  function signalAsOf(symbol,cutoff){return [...state.signals.records.values()].filter(r=>r.symbol===symbol&&r.createdAt<=cutoff)
+    .map(r=>{const journal=r.journal.filter(e=>e.confirmationTime<=cutoff),last=journal.at(-1);
+      if(!last)return null;
+      const confirmed=journal.find(e=>e.status==='CONFIRMED');
+      const q=confirmed?.qualification||null;
+      const oldConfirmed=!!confirmed&&!q&&r.confirmationTime===confirmed.confirmationTime;
+      // Legacy immutable v4A.0.1 files lacked qualification snapshots: only fields
+      // set at confirmation (never later updated) are safe after that timestamp.
+      const source=confirmed?(q||(oldConfirmed?{entry:r.entry,entryZone:r.entryZone,stop:r.stop,tp1:r.tp1,tp2:r.tp2,
+        netRR1:r.netRR1,netRR2:r.netRR2,triggerId:r.triggerId,evidenceIds:r.evidenceIds,
+        qualityChecks:r.qualityChecks}:null)):null;
+      return {id:r.id,version:r.version,symbol:r.symbol,side:r.side,setupTf:r.setupTf,triggerTf:r.triggerTf,
+        createdAt:r.createdAt,lastTransitionTime:last.confirmationTime,status:last.status,
+        sourceCandle:journal[0].sourceCandle,sweepId:r.sweepId,
+        revisionVector:r.revisionVector,confirmationTime:confirmed?.confirmationTime||null,
+        triggerId:source?.triggerId||null,entry:source?.entry??null,entryZone:source?.entryZone??null,
+        stop:source?.stop??null,tp1:source?.tp1??null,tp2:source?.tp2??null,
+        netRR1:source?.netRR1??null,netRR2:source?.netRR2??null,
+        evidenceIds:confirmed?(source?.evidenceIds||[]):[r.sweepId],qualityChecks:source?.qualityChecks||null,
+        reason:last.reason||'HISTORICAL OBSERVATION',paper:last.paper||null,journal};
+    }).filter(Boolean);}
+  function signalDiagnostics(full){const rs=[...state.signals.records.values()];return {engineVersion:SIGNAL_VERSION,readOnly:true,
+    storageMode:state.signals.persistence,policy:{...SIGNAL_POLICY},totals:signalStatusSummary(),
+    lastScanned:[...state.signals.lastScanned],blocked:[...state.signals.blocked],
+    records:full?rs.map(r=>structuredClone(r)):rs.map(r=>({id:r.id,symbol:r.symbol,side:r.side,status:r.status,
+      createdAt:r.createdAt,confirmationTime:r.confirmationTime,transitionCount:r.journal.length}))};}
+
   function renderContext(){
     const root=$('contextGrid');root.replaceChildren();
     if(!state.selected){$('contextStatus').textContent='UNVERIFIED';$('contextDetails').textContent='No verified symbol selected.';return;}
@@ -1529,7 +2037,7 @@
     clearTimeout(group.recoveryRetryTimer);group.recoveryRetryTimer=null;group.recoveryFailureCount=0;
     // Immediately evict queued REST jobs belonging to an invalidated socket generation.
     queue.pump();
-    for(const symbol of group.symbols)for(const tf of CONFIG.tfOrder){const store=storeOf(symbol,tf);store.recoveryRequired=true;store.lastWsAt=0;store.provisional=null;}
+    for(const symbol of group.symbols)for(const tf of CONFIG.tfOrder){const store=storeOf(symbol,tf);store.recoveryRequired=true;store.lastWsAt=0;store.lastClosedWsCloseTime=0;store.provisional=null;}
     track('ws',{group:group.id,action:'recovery-required',reason,token:group.recoveryToken});scheduleRender();
   }
   function reconnectGroup(group,epoch){
@@ -1629,6 +2137,7 @@
         if(s.lastError&&s.lastError.includes('conflict'))scheduleCheck(data.s,tf,epoch,1000);
       }catch(e){s.rejected++;state.rejected++;s.lastError=normalizedError(e);if(e.message!=='Unclosed candle excluded')log('warn',`${data.s} ${tf}: WS closed candle rejected (${normalizedError(e)}).`);scheduleCheck(data.s,tf,epoch,Math.max(1200,CONFIG.candleCloseGraceMs));return false;}}
     else{s.provisional={close:c,time:feedTime};}
+    if(k.x===true)s.lastClosedWsCloseTime=k.T;
     s.lastWsAt=Date.now();group.lastFrame=Date.now();state.lastFrame=Date.now();if(!group.firstFrame)group.firstFrame=Date.now();updateDeliveryStatus(group);
     scheduleRender();return true;
   }
@@ -1734,7 +2243,7 @@
       catch(err){if(epoch===state.epoch){store.lastError=normalizedError(err);track('recovery',{symbol,tf,mode:'scheduled-full-reload',ok:false,error:normalizedError(err)});}}
       finally{store.resyncing=false;store.lastCheck=Date.now();scheduleRender();}},delay);
   }
-  async function begin(){const epoch=++state.epoch;state.ready=false;state.bootstrapping=true;state.lastFrame=0;for(const store of state.stores.values()){store.recoveryRequired=true;store.resyncing=false;store.lastWsAt=0;store.provisional=null;} state.rejected=0;state.duplicates=0;state.completed=0;state.total=0;state.hasRestSuccess=false;state.restError='';state.timeOffset=null;state.timeSyncedAt=0;state.clockSyncing=false;state.lastRefresh=0;
+  async function begin(){const epoch=++state.epoch;state.ready=false;state.bootstrapping=true;state.lastFrame=0;for(const store of state.stores.values()){store.recoveryRequired=true;store.resyncing=false;store.lastWsAt=0;store.lastClosedWsCloseTime=0;store.provisional=null;} state.rejected=0;state.duplicates=0;state.completed=0;state.total=0;state.hasRestSuccess=false;state.restError='';state.timeOffset=null;state.timeSyncedAt=0;state.clockSyncing=false;state.lastRefresh=0;
     clearTimeout(state.structure.analysisTimer);state.structure.analysisTimer=null;state.structure.pending.clear();
     state.structure.bootstrap={epoch,expected:0,settled:false,completedAtMs:null,failures:new Map()};
     for(const c of state.controllers)c.abort();state.controllers.clear();queue.clear();for(const g of state.groups){g.closed=true;clearTimeout(g.timer);clearTimeout(g.reconcileTimer);clearTimeout(g.closeFallbackTimer);clearTimeout(g.recoveryRetryTimer);try{g.ws?.close(1000,'Reset');}catch{}}state.groups=[];cache.clear();
@@ -2000,10 +2509,10 @@
     renderRows();$('instrumentName').textContent=state.selected||'No symbol available';$('instrumentStatus').textContent=state.selected?`${CONFIG.tfOrder.filter(tf=>inspectStore(state.stores.get(keyFor(state.selected,tf)),tf)==='VALID').length}/4 VALID`:'NO DATA';
     for(const [tf,id] of [['5m','n5m'],['15m','n15m'],['1h','n1h'],['4h','n4h']]){$(id).textContent=state.selected?(state.stores.get(keyFor(state.selected,tf))?.bars.length||'—'):'—';}
     const selectedStore=state.selected?state.stores.get(keyFor(state.selected,state.selectedTf)):null;
-    $('instrumentHint').textContent=selectedStore?.lastError?`Integrity notice: ${selectedStore.lastError}. Data are not treated as verified.`:'Only Binance-derived, completed and validated candles appear in the workspace. Signals and trading are intentionally disabled.';
+    $('instrumentHint').textContent=selectedStore?.lastError?`Integrity notice: ${selectedStore.lastError}. Data are not treated as verified.`:'Only Binance-derived, completed and validated candles appear in the workspace. Read-only signal candidates are evaluated separately from live-feed status.';
     $('chartTitle').textContent=state.selected?`${state.selected} · Closed Candles`:'Verified Candle Workspace';$('chartSubtitle').textContent=state.selected?`Binance USDT-M Perpetual · ${state.selectedTf.toUpperCase()} · UTC`:'Select a symbol after REST validation';
     $('browserClock').textContent='Browser UTC: '+new Date().toISOString().slice(11,19);
-    renderStructures();renderLiquidity();renderFvg();renderOb();renderContext();paintChart();
+    renderSignalRadar();renderStructures();renderLiquidity();renderFvg();renderOb();renderContext();paintChart();
   }
   function scheduleRender(){if(state.renderTimer)return;state.renderTimer=setTimeout(()=>{state.renderTimer=null;render();},450);}
   function monitor(){if(!state.ready)return;const epoch=state.epoch;const n=Date.now();
@@ -2206,7 +2715,8 @@
     return {schema:'BinanceFuturesRadar.Phase3F.Diagnostics.v1',exportedUtc:snapshotUtc,exportMode:mode,
       snapshotProtocol:'SYNCHRONOUS_ATOMIC_BEFORE_ASYNC_SERIALIZATION',
       caution:'Actual observations from THIS browser session only; external Binance connectivity not certified by this export. No mocked data in the shipped application.',
-      application:{phase:'3F',readOnly:true,signalsEnabled:false,ordersEnabled:false,urlProtocol:location.protocol,userAgent:navigator.userAgent},
+      application:{phase:'4A',readOnly:true,signalsEnabled:true,ordersEnabled:false,urlProtocol:location.protocol,userAgent:navigator.userAgent},
+      signalRadar:signalDiagnostics(full),
       analyticalBootstrap:analyticalCoverage(),
       durableHistory:{schemaVersion:PERSISTENCE_SCHEMA,operationalHardeningVersion:'3G.0.2',mode:state.persistence.mode,checkpointId:state.persistence.checkpointId,commitUtc:state.persistence.commitAtMs?new Date(state.persistence.commitAtMs).toISOString():null,restoredFromDisk:state.persistence.restored,recordedSeries:state.persistence.seriesCount,lastError:state.persistence.lastError,
         lastRejectedCandidate:copyDiagnosticsMutable(state.persistence.lastWarning),
@@ -2729,9 +3239,24 @@
         `Confirmed event IDs: ${[d.structureEvent,d.liquidityEvent,d.latestFvg,d.latestOrderBlock].filter(Boolean).map(e=>e.sourceEventId).join(' · ')||'None'}`]:[d?.reason||'Source evidence unavailable at this cutoff'];
       for(const value of lines){const p=document.createElement('p');p.textContent=value;card.append(p);}root.append(card);
     }
+    const history=signalAsOf(symbol,cutoff);
+    if(history.length){
+      const signalTitle=signalElement('h3',`Read-only signal history · ${history.length} known at cutoff`,'signal-group-title');
+      signalTitle.style.gridColumn='1/-1';root.append(signalTitle);
+      for(const item of history.slice(-12)){
+        const block=document.createElement('div');block.className='replay-card';
+        block.append(signalElement('strong',`${item.symbol} ${item.side} · ${item.status}`));
+        block.append(signalElement('p',`Signal ID ${item.id}`));
+        block.append(signalElement('p',item.confirmationTime?`Confirmed ${new Date(item.confirmationTime).toISOString()} · proposed entry ${formatPrice(item.entry)}`:'Entry not confirmed at this historical cutoff'));
+        root.append(block);
+      }
+    }
     return result;
   }
 
+  $('signalDirection').addEventListener('change',e=>{state.signals.filter=e.target.value;scheduleRender();});
+  $('signalSymbol').addEventListener('input',e=>{state.signals.symbolFilter=e.target.value.trim().toUpperCase();scheduleRender();});
+  $('signalTimeframe').addEventListener('change',e=>{state.signals.timeframeFilter=e.target.value;scheduleRender();});
   $('exportDiagnostics').addEventListener('click',()=>{exportDiagnostics('summary').catch(()=>{});});
   $('exportForensic').addEventListener('click',()=>{exportDiagnostics('forensic').catch(()=>{});});
   $('showLiquidity').addEventListener('change',e=>{state.liquidity.overlays=!!e.target.checked;scheduleRender();});
@@ -2757,7 +3282,8 @@
   setInterval(()=>{monitor();if(state.ready&&state.epoch){const epoch=state.epoch;if(!timeOK()||Date.now()-state.timeSyncedAt>180000)syncServerTime(epoch).catch(e=>{if(epoch===state.epoch){log('error','Binance time resync failed: '+normalizedError(e));scheduleRender();}});}},10000);
   setInterval(()=>{if(state.ready&&state.epoch&&Date.now()-state.lastRefresh>300000){state.lastRefresh=Date.now();const epoch=state.epoch;fetchJson('/fapi/v1/ticker/24hr',{},40,0,epoch).then(tickers=>{if(epoch!==state.epoch||!Array.isArray(tickers))return;const bySym=new Map(tickers.map(t=>[t.symbol,Number(t.quoteVolume)]));for(const s of state.symbols){const q=bySym.get(s.symbol);if(Number.isFinite(q)&&q>=0)s.quote24h=q;}scheduleRender();}).catch(()=>{});}},60000);
   // Read-only inspection hooks for deterministic quality-assurance tests; no simulated data is ever rendered by the app.
-  Object.defineProperty(window,'__RADAR_QA__',{value:Object.freeze({contextAsOf,contextCutoff,syncContextIndex,sourceIndexAsOf,computeFvg,createFvgTracker,cloneFvgTracker,advanceFvgTracker,fvgSnapshot,fvgAsOf,validateFvgConfig,computeLiquidity,createLiquidityTracker,cloneLiquidityTracker,advanceLiquidityTracker,liquiditySnapshot,liquidityAsOf,buildDiagnostics,serializeDiagnostics,exportDiagnostics,copyDiagnosticsMutable,copyDiagnosticsJournal,analyticalCoverage,currentMarketValidationFailures,refreshCurrentValidationWarning,assertCheckpointCoverage,queueStructure,finishAnalyticalBootstrap,persistCheckpoint,initializePersistence,capturePersistenceSnapshot,restorePersistenceSnapshot,validatePersistenceCandidate,performReplay,storageDigest,createCheckpointDigestWorker,disposeCheckpointDigestWorker,workerDigest,createObTracker,cloneObTracker,advanceObTracker,obSnapshot,obAsOf,computeOb,validateObConfig,validateLiquidityConfig,liquidityBands,computeStructure,checkedStructureBars,confirmedEventsAsOf,structureFor,createStructureTracker,advanceStructureTracker,cloneStructureTracker,snapshotStructure,reconcileStructureWindow,normalizeCandle,readFloat,readTradeCount,scanGap,candleEqual,getUniverse,expectedLastClose,historyWindow,validateSnapshot,newStore,mergeCandles,inspectStore,config:CONFIG,summary:()=>({mode:showState(),analyticalCoverage:analyticalCoverage(),stores:[...state.stores.entries()].map(([key,st])=>({key,status:inspectStore(st,key.split('|')[1]),count:st.bars.length,recoveryRequired:st.recoveryRequired}))})}),writable:false,configurable:false});
+  Object.defineProperty(window,'__RADAR_QA__',{value:Object.freeze({signalRiskGeometry,qualifySignalObservation,signalObservationAt,advanceExistingSignals,ingestSignalObservation,scanSignalSymbol,signalAsOf,signalStatusSummary,signalDiagnostics,signalExecutable,signalTransition,validateSignalJournal,signalSourceValidity,signalFreshCandle,markUnverifiableSignalGap,revalidateSignalRevisions,flushSignals,signalStorageInitialize,signals:state.signals,contextAsOf,contextCutoff,syncContextIndex,sourceIndexAsOf,computeFvg,createFvgTracker,cloneFvgTracker,advanceFvgTracker,fvgSnapshot,fvgAsOf,validateFvgConfig,computeLiquidity,createLiquidityTracker,cloneLiquidityTracker,advanceLiquidityTracker,liquiditySnapshot,liquidityAsOf,buildDiagnostics,serializeDiagnostics,exportDiagnostics,copyDiagnosticsMutable,copyDiagnosticsJournal,analyticalCoverage,currentMarketValidationFailures,refreshCurrentValidationWarning,assertCheckpointCoverage,queueStructure,finishAnalyticalBootstrap,persistCheckpoint,initializePersistence,capturePersistenceSnapshot,restorePersistenceSnapshot,validatePersistenceCandidate,performReplay,storageDigest,createCheckpointDigestWorker,disposeCheckpointDigestWorker,workerDigest,createObTracker,cloneObTracker,advanceObTracker,obSnapshot,obAsOf,computeOb,validateObConfig,validateLiquidityConfig,liquidityBands,computeStructure,checkedStructureBars,confirmedEventsAsOf,structureFor,createStructureTracker,advanceStructureTracker,cloneStructureTracker,snapshotStructure,reconcileStructureWindow,normalizeCandle,readFloat,readTradeCount,scanGap,candleEqual,getUniverse,expectedLastClose,historyWindow,validateSnapshot,newStore,mergeCandles,inspectStore,config:CONFIG,summary:()=>({mode:showState(),analyticalCoverage:analyticalCoverage(),stores:[...state.stores.entries()].map(([key,st])=>({key,status:inspectStore(st,key.split('|')[1]),count:st.bars.length,recoveryRequired:st.recoveryRequired}))})}),writable:false,configurable:false});
+  signalStorageInitialize().then(()=>{if(state.ready)for(const item of state.symbols)scheduleSignalScan(item.symbol);}).catch(()=>{});
   render();initializePersistence().catch(e=>{state.persistence.mode='SESSION-ONLY';state.persistence.lastError=normalizedError(e);renderStorageStatus();}).finally(()=>begin());
 })();
 </script>
