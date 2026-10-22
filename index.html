@@ -31,7 +31,7 @@
 <section class="panel fvg-panel"><div class="panel-title"><div><h2>Fair Value Gaps · Four Timeframes</h2><div class="subhead">Three confirmed candles · wick-based mitigation · no predictive claims</div></div><span class="pill" id="fvgStatus">UNVERIFIED</span></div><div class="structure-grid" id="fvgGrid"><div class="dim">Waiting for verified closed candles.</div></div><div class="structure-details" id="fvgDetails">Formation is confirmed only after the third candle closes. Future touches never alter the original boundaries.</div></section>
 <section class="panel ob-panel"><div class="panel-title"><div><h2>Order Block Observations · Four Timeframes</h2><div class="subhead">Confirmed BOS / CHoCH sources · conservative wick evidence · not institutional order proof</div></div><span class="pill" id="obStatus">UNVERIFIED</span></div><div class="structure-grid" id="obGrid"><div class="dim">Waiting for confirmed structural breaks.</div></div><div class="structure-details" id="obDetails">Order Blocks become known only at their structural break confirmation. No trading signals are generated.</div></section>
 <section class="panel context-panel"><div class="panel-title"><div><h2>Multi-Timeframe Context · As-Of Safe</h2><div class="subhead">Only confirmed observations available at the UTC cutoff · descriptive, never predictive</div></div><span class="pill" id="contextStatus">UNVERIFIED</span></div><div class="structure-grid" id="contextGrid"><div class="dim">Awaiting independently validated timeframe histories.</div></div><div class="structure-details" id="contextDetails">Evidence links show exact source IDs, versions and confirmation times. Missing context stays unknown.</div></section>
-<section class="panel history-panel" aria-labelledby="historyTitle"><div class="panel-title"><div><h2 id="historyTitle">Durable History &amp; UTC Replay</h2><div class="subhead">IndexedDB checkpoints · historical-only restoration · deterministic confirmed evidence</div></div><span class="pill" id="storageStatus">CHECKING STORAGE</span></div><div class="history-body"><div class="history-info" id="storageDetail" role="status">Checking browser storage permissions. No saved data is treated as LIVE.</div><div class="history-actions"><button type="button" class="btn" id="saveHistory">Save Verified Checkpoint</button><button type="button" class="btn ghost" id="clearHistory">Erase Local Checkpoints…</button></div><div class="history-controls"><label for="replayUtc">Historical cutoff (UTC)</label><input id="replayUtc" type="datetime-local" step="0.001" aria-label="UTC historical replay cutoff"><button type="button" class="btn primary" id="runReplay">Replay As-Of UTC</button><button type="button" class="btn ghost" id="resetReplay">Return to Current Context</button></div><div class="history-info" id="replayStatus">Replay is read-only and never uses unconfirmed future observations.</div><div class="replay-results" id="replayResults"><span class="dim">Choose a verified historical UTC cutoff to inspect archived observations.</span></div></div></section>
+<section class="panel history-panel" aria-labelledby="historyTitle"><div class="panel-title"><div><h2 id="historyTitle">Durable History &amp; UTC Replay</h2><div class="subhead">IndexedDB checkpoints · historical-only restoration · deterministic confirmed evidence</div></div><span class="pill" id="storageStatus">CHECKING STORAGE</span></div><div class="history-body"><div class="history-info" id="storageDetail" role="status">Checking browser storage permissions. No saved data is treated as LIVE.</div><div class="history-info" id="analysisCoverage" role="status">Analytical bootstrap not started.</div><div class="history-actions"><button type="button" class="btn" id="saveHistory">Save Verified Checkpoint</button><button type="button" class="btn ghost" id="clearHistory">Erase Local Checkpoints…</button></div><div class="history-controls"><label for="replayUtc">Historical cutoff (UTC)</label><input id="replayUtc" type="datetime-local" step="0.001" aria-label="UTC historical replay cutoff"><button type="button" class="btn primary" id="runReplay">Replay As-Of UTC</button><button type="button" class="btn ghost" id="resetReplay">Return to Current Context</button></div><div class="history-info" id="replayStatus">Replay is read-only and never uses unconfirmed future observations.</div><div class="replay-results" id="replayResults"><span class="dim">Choose a verified historical UTC cutoff to inspect archived observations.</span></div></div></section>
 <section class="panel"><div class="panel-title"><div><h2>Selected Instrument</h2><div class="subhead" id="instrumentName">No symbol available</div></div><span class="pill" id="instrumentStatus">NO DATA</span></div><div class="summary"><div class="mini"><label>5m Closed Bars</label><span class="big" id="n5m">—</span><span class="mini-note">Target: 500</span></div><div class="mini"><label>15m Closed Bars</label><span class="big" id="n15m">—</span><span class="mini-note">Target: 400</span></div><div class="mini"><label>1H Closed Bars</label><span class="big" id="n1h">—</span><span class="mini-note">Target: 300</span></div><div class="mini"><label>4H Closed Bars</label><span class="big" id="n4h">—</span><span class="mini-note">Target: 300</span></div></div><div class="hint" id="instrumentHint">Structural observations require validated, contiguous closed-candle history. No market forecasts, signals or orders.</div></section>
 </div>
 <div class="bottom"><span>Binance Futures Institutional Signal Radar · Phase 3F · Time-aware structure, liquidity, FVG and Order Block context · No trading capability</span><span>API: <a class="subtle-link" href="https://developers.binance.com/en/docs/products/derivatives-trading-usds-futures/general-info" target="_blank" rel="noopener noreferrer">Official Binance Documentation ↗</a> · <span id="browserClock">Browser clock: —</span></span></div>
@@ -91,7 +91,7 @@
     completed:0,total:0,rejected:0,duplicates:0,gaps:0,lastFrame:0,logs:[],lastAlert:'',lastRender:0,renderTimer:null,
     bootstrapping:false,ready:false,search:'',lastRefresh:0,
     diagnostics:{rest:[],ws:[],recovery:[],events:[],exportCount:0},
-    structure:{version:'3A.2.0',config:{left:3,right:3,atrPeriod:14,atrMultiplier:0.10,tickMultiplier:2},records:new Map(),archives:[],pending:new Set(),analysisTimer:null,revisionSerial:0},
+    structure:{version:'3A.2.0',config:{left:3,right:3,atrPeriod:14,atrMultiplier:0.10,tickMultiplier:2},records:new Map(),archives:[],pending:new Set(),analysisTimer:null,revisionSerial:0,bootstrap:{epoch:0,expected:0,settled:false,completedAtMs:null,failures:new Map()}},
     liquidity:{config:{tickTolerance:2,atrTolerance:0.15,maxPivotDistance:80,minimumPivots:2,
       excursionTicks:2,excursionAtr:0.05,reclaimTicks:1,reclaimAtr:0.02,reclaimBars:3,levelExpiryBars:180},overlays:true},
     fvg:{config:{minimumTicks:2,minimumAtr:0.05,expiryBars:180,displacementEnabled:false,displacementBodyAtr:0.8,displacementCloseFraction:0.65},overlays:true},
@@ -993,8 +993,10 @@
     const key=keyFor(symbol,tf),store=state.stores.get(key),existing=state.structure.records.get(key);
     const valid=inspectStore(store,tf)==='VALID';
     const group=state.groups.find(g=>g.symbols.includes(symbol));
+    // Verified REST OHLCV can bootstrap HISTORICAL analytics even when a WS is
+    // CONNECTING, silent or recovering. Transport certification is independent.
     const operational=state.ready&&navigator.onLine!==false&&(!group||(group.ws?.readyState===WebSocket.OPEN&&!group.recovering&&!group.recoveryPending&&!group.recoveryRunning));
-    if(!valid||!timeOK()||(!operational&&!force))return existing?{...existing,result:snapshotStructure(existing.tracker),cumulativeEvents:existing.tracker.events,
+    if(!valid||!timeOK())return existing?{...existing,result:snapshotStructure(existing.tracker),cumulativeEvents:existing.tracker.events,
       displayStatus:existing.contextStatus==='CONTEXT_INSUFFICIENT'?'CONTEXT INSUFFICIENT / UNVERIFIED':'HISTORICAL / UNVERIFIED',reason:store?inspectStore(store,tf):'MISSING'}:null;
     if(!store?.bars?.length)return null;
     const meta=state.symbols.find(s=>s.symbol===symbol);
@@ -1005,7 +1007,7 @@
     if(!Number.isFinite(tickSize)||tickSize<=0)return existing?{...existing,result:snapshotStructure(existing.tracker),displayStatus:'HISTORICAL / INVALID TICK'}:null;
     const parameters=JSON.stringify({structure:state.structure.config,liquidity:state.liquidity.config,fvg:state.fvg.config,orderBlocks:state.orderBlocks.config}),bars=store.bars;
     if(existing&&existing.barsRef===bars&&existing.parameters===parameters&&existing.contextStatus!=='CONTEXT_INSUFFICIENT')
-      return {...existing,result:snapshotStructure(existing.tracker),cumulativeEvents:existing.tracker.events,displayStatus:showState().status==='live'?'LIVE VERIFIED':'HISTORICAL / FEED NOT LIVE'};
+      return {...existing,result:snapshotStructure(existing.tracker),cumulativeEvents:existing.tracker.events,displayStatus:operational&&showState().status==='live'?'LIVE VERIFIED':'HISTORICAL / FEED NOT LIVE'};
     let outcome;try{outcome=reconcileStructureWindow(existing,bars,tf,tickSize,state.structure.config,store.lastMergeOrigin||'rest',CLOCK());}
     catch(err){track('events',{level:'warn',message:`${key} structure validation failed: ${normalizedError(err)}`});
       return existing?{...existing,result:snapshotStructure(existing.tracker),cumulativeEvents:existing.tracker.events,displayStatus:'HISTORICAL / INVALID HISTORY',reason:normalizedError(err)}:null;}
@@ -1057,11 +1059,44 @@
     state.structure.records.set(key,updated);
     syncContextIndex(key,updated);
     schedulePersistenceCheckpoint();
-    const status=updated.contextStatus==='CONTEXT_INSUFFICIENT'?'CONTEXT INSUFFICIENT / UNVERIFIED':showState().status==='live'?'LIVE VERIFIED':'HISTORICAL / FEED NOT LIVE';
+    const status=updated.contextStatus==='CONTEXT_INSUFFICIENT'?'CONTEXT INSUFFICIENT / UNVERIFIED':operational&&showState().status==='live'?'LIVE VERIFIED':'HISTORICAL / FEED NOT LIVE';
     return {...updated,result:snapshotStructure(updated.tracker),cumulativeEvents:updated.tracker.events,displayStatus:status};
   }
-  // Run all 20 x 4 independent series in bounded batches without blocking the UI.
-  // One pending key per series; duplicate rapid frames coalesce naturally.
+  // A successful REST candle store is not an initialized analytical tracker.
+  // Count analytical readiness against the CURRENT monitoring universe only;
+  // retained retired symbols are separately preserved in the historical registry.
+  function analyticalCoverage(){
+    let sourceReady=0,analyticalSeriesReady=0;const failed=[];
+    for(const item of state.symbols)for(const tf of CONFIG.tfOrder){
+      const key=keyFor(item.symbol,tf),store=state.stores.get(key),record=state.structure.records.get(key);
+      const source=inspectStore(store,tf)==='VALID';
+      if(source)sourceReady++;
+      const verified=!!record&&record.contextStatus!=='CONTEXT_INSUFFICIENT'&&
+        record.tracker?.tf===tf&&record.tracker?.tickSize===item.tickSize&&
+        record.tracker?.lastClosedAt===store?.bars?.at(-1)?.closeTime&&
+        record.barsRef===store?.bars;
+      if(source&&verified)analyticalSeriesReady++;
+      else failed.push({key,reason:!source?inspectStore(store,tf):
+        !record?'ANALYSIS NOT INITIALIZED':record.contextStatus==='CONTEXT_INSUFFICIENT'?'CONTEXT INSUFFICIENT':
+        'ANALYTICAL CHECKPOINT BEHIND VERIFIED CANDLES'});
+    }
+    return {expected:state.symbols.length*CONFIG.tfOrder.length,validCandleSeries:sourceReady,
+      analyticalSeriesReady,retainedHistoricalSeries:state.structure.records.size,failed,
+      bootstrapSettled:state.structure.bootstrap.settled};
+  }
+  function finishAnalyticalBootstrap(epoch){
+    const b=state.structure.bootstrap;if(epoch!==state.epoch||b.epoch!==epoch)return;
+    const c=analyticalCoverage();b.failures=new Map(c.failed.map(f=>[f.key,f.reason]));
+    b.settled=true;b.completedAtMs=Date.now();
+    if(c.analyticalSeriesReady!==c.expected){
+      log('warn',`Historical analytical bootstrap incomplete: ${c.analyticalSeriesReady}/${c.expected} trackers; ${c.validCandleSeries} valid REST series.`);
+    }else{
+      log('info',`Historical analytical bootstrap complete: ${c.analyticalSeriesReady}/${c.expected} confirmed trackers; live transport is evaluated separately.`);
+    }
+    scheduleRender();
+  }
+  // Bounded four-series batches; each key is single-flight and repeated WS
+  // updates coalesce. Progress and failure information are independent of LIVE.
   function queueStructure(symbol,tf){
     if(!state.ready||!CONFIG.timeframes[tf])return;
     state.structure.pending.add(keyFor(symbol,tf));
@@ -1071,10 +1106,17 @@
       state.structure.analysisTimer=null;
       if(epoch!==state.epoch){state.structure.pending.clear();return;}
       for(const key of [...state.structure.pending].slice(0,4)){
-        state.structure.pending.delete(key);const [s,t]=key.split('|');structureFor(s,t);
+        state.structure.pending.delete(key);const [s,t]=key.split('|');
+        try{const rec=structureFor(s,t);if(!rec||rec.contextStatus==='CONTEXT_INSUFFICIENT')
+          state.structure.bootstrap.failures.set(key,rec?.reason||'ANALYTICAL SOURCE NOT VERIFIED');
+          else state.structure.bootstrap.failures.delete(key);
+        }catch(error){state.structure.bootstrap.failures.set(key,normalizedError(error));
+          log('error',`${key} analytical bootstrap: ${normalizedError(error)}`);}
       }
       if(state.structure.pending.size)state.structure.analysisTimer=setTimeout(drain,10);
-      else scheduleRender();
+      else {if(!state.structure.bootstrap.settled&&state.structure.bootstrap.epoch===epoch)
+          finishAnalyticalBootstrap(epoch);
+        scheduleRender();}
     };
     state.structure.analysisTimer=setTimeout(drain,10);
   }
@@ -1655,6 +1697,7 @@
   }
   async function begin(){const epoch=++state.epoch;state.ready=false;state.bootstrapping=true;state.lastFrame=0;for(const store of state.stores.values()){store.recoveryRequired=true;store.resyncing=false;store.lastWsAt=0;store.provisional=null;} state.rejected=0;state.duplicates=0;state.completed=0;state.total=0;state.hasRestSuccess=false;state.restError='';state.timeOffset=null;state.timeSyncedAt=0;state.clockSyncing=false;state.lastRefresh=0;
     clearTimeout(state.structure.analysisTimer);state.structure.analysisTimer=null;state.structure.pending.clear();
+    state.structure.bootstrap={epoch,expected:0,settled:false,completedAtMs:null,failures:new Map()};
     for(const c of state.controllers)c.abort();state.controllers.clear();queue.clear();for(const g of state.groups){g.closed=true;clearTimeout(g.timer);clearTimeout(g.reconcileTimer);clearTimeout(g.closeFallbackTimer);clearTimeout(g.recoveryRetryTimer);try{g.ws?.close(1000,'Reset');}catch{}}state.groups=[];cache.clear();
     $('retry').disabled=true;$('retry').textContent='Synchronizing…';$('alert').classList.remove('show');showPending();log('info','Starting verified Binance REST synchronization.');scheduleRender();
     try{await syncServerTime(epoch);if(epoch!==state.epoch)return;
@@ -1662,14 +1705,17 @@
       if(epoch!==state.epoch)return;state.symbols=getUniverse(exchange,tickers);
       if(!state.symbols.length)throw new Error('No eligible USDT perpetual instruments with sufficient verified 24h turnover');
       state.selected=state.symbols[0].symbol;state.total=state.symbols.length*CONFIG.tfOrder.length;
+      state.structure.bootstrap.expected=state.total;
       log('info',`Universe validated: ${state.symbols.length} live-trading USDT perpetual symbols. Loading ${state.total} timeframe series.`);scheduleRender();
       const jobs=state.symbols.flatMap(item=>CONFIG.tfOrder.map(tf=>(async()=>{try{const refreshed=await fetchKlines(item.symbol,tf,epoch);if(refreshed&&epoch===state.epoch)storeOf(item.symbol,tf).recoveryRequired=false;}
         catch(e){if(epoch===state.epoch){storeOf(item.symbol,tf).lastError=normalizedError(e);log('error',`${item.symbol} ${tf} bootstrap failed: ${normalizedError(e)}`);}}
         finally{if(epoch===state.epoch){state.completed++;scheduleRender();}}})()));
       await Promise.allSettled(jobs);if(epoch!==state.epoch)return;state.bootstrapping=false;state.ready=true;
       state.groups=groupsFor(state.symbols);for(const group of state.groups)openGroup(group,epoch,false);
+      // Build HISTORICAL trackers from all independently validated REST series.
+      // WebSocket OPEN is NOT a prerequisite; the bounded queue is a completion barrier.
       for(const item of state.symbols)for(const tf of CONFIG.tfOrder)queueStructure(item.symbol,tf);
-      log('info','REST bootstrap complete; market WebSocket connection attempts started. No success is presumed until frames arrive.');
+      log('info','REST bootstrap complete; 80-series historical analysis queued independently of connecting market WebSockets. No LIVE success is presumed.');
       const failed=[...state.stores.values()].filter((s)=>s.lastError||!s.bars.length).length;
       if(failed)alertProblem('Some candle series failed validation',`${failed} timeframe series have incomplete or invalid data. Review per-symbol health; the system will not mask missing candles.`);
       scheduleRender();
@@ -2121,6 +2167,7 @@
       snapshotProtocol:'SYNCHRONOUS_ATOMIC_BEFORE_ASYNC_SERIALIZATION',
       caution:'Actual observations from THIS browser session only; external Binance connectivity not certified by this export. No mocked data in the shipped application.',
       application:{phase:'3F',readOnly:true,signalsEnabled:false,ordersEnabled:false,urlProtocol:location.protocol,userAgent:navigator.userAgent},
+      analyticalBootstrap:analyticalCoverage(),
       durableHistory:{schemaVersion:PERSISTENCE_SCHEMA,mode:state.persistence.mode,checkpointId:state.persistence.checkpointId,commitUtc:state.persistence.commitAtMs?new Date(state.persistence.commitAtMs).toISOString():null,restoredFromDisk:state.persistence.restored,recordedSeries:state.persistence.seriesCount,lastError:state.persistence.lastError,replayCutoffUtc:state.replay.active?new Date(state.replay.cutoff).toISOString():null,commitTimeIsNotExchangeKnowledgeTime:true},
       connectivity:{overall:showState(),browserOnline:navigator.onLine,hasRestSuccess:state.hasRestSuccess,restError:state.restError||null,
         serverTimeConfirmed:timeOK(),clockOffsetMs:state.timeOffset,clockRttMs:state.timeRtt,
@@ -2332,7 +2379,8 @@
     el.className='pill '+(p.mode==='PERSISTED'?'ok':p.mode==='SAVING'?'wait':p.mode==='SESSION-ONLY'||p.mode.includes('UNVERIFIED')?'bad':'wait');
     const detail=p.detail||'No committed checkpoint available.';
     $('storageDetail').textContent=`${detail} ${p.checkpointId?'Checkpoint '+p.checkpointId+'.':''} ${p.commitAtMs?'Committed '+new Date(p.commitAtMs).toISOString()+'.':''} Storage does not certify live exchange data.`;
-    $('saveHistory').disabled=!p.db||p.saving||p.mode.includes('UNVERIFIED');
+    const c=analyticalCoverage();$('analysisCoverage').textContent=`Valid candle series: ${c.validCandleSeries}/${c.expected}. Analytical series ready: ${c.analyticalSeriesReady}/${c.expected}. Retained historical trackers: ${c.retainedHistoricalSeries}. Bootstrap: ${c.bootstrapSettled?'SETTLED':'PENDING'}.${c.failed.length?' Unready: '+c.failed.slice(0,3).map(f=>f.key+' ('+f.reason+')').join('; '):''}`;
+    $('saveHistory').disabled=!p.db||p.saving||p.mode.includes('UNVERIFIED')||!state.ready||!c.expected||!c.bootstrapSettled||c.validCandleSeries!==c.expected||c.analyticalSeriesReady!==c.expected;
     $('clearHistory').disabled=!p.db;
   }
   async function readStoredCheckpoint(db){
@@ -2467,11 +2515,28 @@
     // on the fully detached candidate BEFORE any IDB write transaction.
     return restorePersistenceSnapshot({head,chunks},{publish:false});
   }
+  function assertCheckpointCoverage(manual=false){
+    const coverage=analyticalCoverage();
+    if(!state.ready||state.bootstrapping||state.completed!==state.total||!coverage.bootstrapSettled||
+       !coverage.expected||coverage.validCandleSeries!==coverage.expected||
+       coverage.analyticalSeriesReady!==coverage.expected){
+      const message=`Checkpoint rejected: analytical coverage ${coverage.analyticalSeriesReady}/${coverage.expected}, verified candles ${coverage.validCandleSeries}/${coverage.expected}; previous HEAD unchanged.`;
+      const p=state.persistence;p.lastError=message;p.detail=message;
+      track('events',{level:'warn',message});if(manual)alertProblem('Incomplete analytical checkpoint',message);
+      renderStorageStatus();throw new Error(message);
+    }
+    return coverage;
+  }
   async function persistCheckpoint(manual=false){
     const p=state.persistence;if(!p.db)throw new Error('IndexedDB unavailable');
     if(p.mode.includes('UNVERIFIED'))throw new Error('Stored checkpoint must be erased explicitly before replacement');
     if(p.saving){p.savingAgain=true;return false;}
     if(!state.structure.records.size)throw new Error('No verified analytical state to persist');
+    // Protect an existing 80-series HEAD from premature four-series (or mixed)
+    // candidates, even when those four records individually pass restoration.
+    // This guard is before the IndexedDB transaction and applies equally to
+    // manual and scheduled saves. Retired series are retained additionally.
+    const coverage=assertCheckpointCoverage(manual);
     p.saving=true;p.mode='SAVING';p.detail='Capturing verified evidence and validating storage integrity.';renderStorageStatus();
     const started=performance.now();let prepared;
     try{
@@ -2481,7 +2546,7 @@
       // atomicity. Reject a mixed valid/invalid candidate as a WHOLE. HEAD
       // remains the most recent independently restorable checkpoint.
       const preflight=validatePersistenceCandidate(captured);
-      if(preflight.verifiedSeries!==state.structure.records.size)
+      if(preflight.verifiedSeries<coverage.expected||preflight.verifiedSeries!==state.structure.records.size)
         throw new Error('Candidate preflight did not validate every analytical series');
       prepared=[];for(const chunk of captured.chunks){
         const fingerprint=await storageDigest(chunk.payload);
@@ -2567,7 +2632,7 @@
   setInterval(()=>{monitor();if(state.ready&&state.epoch){const epoch=state.epoch;if(!timeOK()||Date.now()-state.timeSyncedAt>180000)syncServerTime(epoch).catch(e=>{if(epoch===state.epoch){log('error','Binance time resync failed: '+normalizedError(e));scheduleRender();}});}},10000);
   setInterval(()=>{if(state.ready&&state.epoch&&Date.now()-state.lastRefresh>300000){state.lastRefresh=Date.now();const epoch=state.epoch;fetchJson('/fapi/v1/ticker/24hr',{},40,0,epoch).then(tickers=>{if(epoch!==state.epoch||!Array.isArray(tickers))return;const bySym=new Map(tickers.map(t=>[t.symbol,Number(t.quoteVolume)]));for(const s of state.symbols){const q=bySym.get(s.symbol);if(Number.isFinite(q)&&q>=0)s.quote24h=q;}scheduleRender();}).catch(()=>{});}},60000);
   // Read-only inspection hooks for deterministic quality-assurance tests; no simulated data is ever rendered by the app.
-  Object.defineProperty(window,'__RADAR_QA__',{value:Object.freeze({contextAsOf,contextCutoff,syncContextIndex,sourceIndexAsOf,computeFvg,createFvgTracker,cloneFvgTracker,advanceFvgTracker,fvgSnapshot,fvgAsOf,validateFvgConfig,computeLiquidity,createLiquidityTracker,cloneLiquidityTracker,advanceLiquidityTracker,liquiditySnapshot,liquidityAsOf,buildDiagnostics,serializeDiagnostics,exportDiagnostics,copyDiagnosticsMutable,copyDiagnosticsJournal,persistCheckpoint,initializePersistence,capturePersistenceSnapshot,restorePersistenceSnapshot,validatePersistenceCandidate,performReplay,storageDigest,createObTracker,cloneObTracker,advanceObTracker,obSnapshot,obAsOf,computeOb,validateObConfig,validateLiquidityConfig,liquidityBands,computeStructure,checkedStructureBars,confirmedEventsAsOf,structureFor,createStructureTracker,advanceStructureTracker,cloneStructureTracker,snapshotStructure,reconcileStructureWindow,normalizeCandle,readFloat,readTradeCount,scanGap,candleEqual,getUniverse,expectedLastClose,historyWindow,validateSnapshot,newStore,mergeCandles,inspectStore,config:CONFIG,summary:()=>({mode:showState(),stores:[...state.stores.entries()].map(([key,st])=>({key,status:inspectStore(st,key.split('|')[1]),count:st.bars.length,recoveryRequired:st.recoveryRequired}))})}),writable:false,configurable:false});
+  Object.defineProperty(window,'__RADAR_QA__',{value:Object.freeze({contextAsOf,contextCutoff,syncContextIndex,sourceIndexAsOf,computeFvg,createFvgTracker,cloneFvgTracker,advanceFvgTracker,fvgSnapshot,fvgAsOf,validateFvgConfig,computeLiquidity,createLiquidityTracker,cloneLiquidityTracker,advanceLiquidityTracker,liquiditySnapshot,liquidityAsOf,buildDiagnostics,serializeDiagnostics,exportDiagnostics,copyDiagnosticsMutable,copyDiagnosticsJournal,analyticalCoverage,assertCheckpointCoverage,queueStructure,finishAnalyticalBootstrap,persistCheckpoint,initializePersistence,capturePersistenceSnapshot,restorePersistenceSnapshot,validatePersistenceCandidate,performReplay,storageDigest,createObTracker,cloneObTracker,advanceObTracker,obSnapshot,obAsOf,computeOb,validateObConfig,validateLiquidityConfig,liquidityBands,computeStructure,checkedStructureBars,confirmedEventsAsOf,structureFor,createStructureTracker,advanceStructureTracker,cloneStructureTracker,snapshotStructure,reconcileStructureWindow,normalizeCandle,readFloat,readTradeCount,scanGap,candleEqual,getUniverse,expectedLastClose,historyWindow,validateSnapshot,newStore,mergeCandles,inspectStore,config:CONFIG,summary:()=>({mode:showState(),analyticalCoverage:analyticalCoverage(),stores:[...state.stores.entries()].map(([key,st])=>({key,status:inspectStore(st,key.split('|')[1]),count:st.bars.length,recoveryRequired:st.recoveryRequired}))})}),writable:false,configurable:false});
   render();initializePersistence().catch(e=>{state.persistence.mode='SESSION-ONLY';state.persistence.lastError=normalizedError(e);renderStorageStatus();}).finally(()=>begin());
 })();
 </script>
