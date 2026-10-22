@@ -31,15 +31,15 @@
 <section class="panel fvg-panel"><div class="panel-title"><div><h2>Fair Value Gaps · Four Timeframes</h2><div class="subhead">Three confirmed candles · wick-based mitigation · no predictive claims</div></div><span class="pill" id="fvgStatus">UNVERIFIED</span></div><div class="structure-grid" id="fvgGrid"><div class="dim">Waiting for verified closed candles.</div></div><div class="structure-details" id="fvgDetails">Formation is confirmed only after the third candle closes. Future touches never alter the original boundaries.</div></section>
 <section class="panel ob-panel"><div class="panel-title"><div><h2>Order Block Observations · Four Timeframes</h2><div class="subhead">Confirmed BOS / CHoCH sources · conservative wick evidence · not institutional order proof</div></div><span class="pill" id="obStatus">UNVERIFIED</span></div><div class="structure-grid" id="obGrid"><div class="dim">Waiting for confirmed structural breaks.</div></div><div class="structure-details" id="obDetails">Order Blocks become known only at their structural break confirmation. No trading signals are generated.</div></section>
 <section class="panel context-panel"><div class="panel-title"><div><h2>Multi-Timeframe Context · As-Of Safe</h2><div class="subhead">Only confirmed observations available at the UTC cutoff · descriptive, never predictive</div></div><span class="pill" id="contextStatus">UNVERIFIED</span></div><div class="structure-grid" id="contextGrid"><div class="dim">Awaiting independently validated timeframe histories.</div></div><div class="structure-details" id="contextDetails">Evidence links show exact source IDs, versions and confirmation times. Missing context stays unknown.</div></section>
-<section class="panel history-panel" aria-labelledby="historyTitle"><div class="panel-title"><div><h2 id="historyTitle">Durable History &amp; UTC Replay</h2><div class="subhead">IndexedDB checkpoints · historical-only restoration · deterministic confirmed evidence</div></div><span class="pill" id="storageStatus">CHECKING STORAGE</span></div><div class="history-body"><div class="history-info" id="storageDetail" role="status">Checking browser storage permissions. No saved data is treated as LIVE.</div><div class="history-info" id="analysisCoverage" role="status">Analytical bootstrap not started.</div><div class="history-actions"><button type="button" class="btn" id="saveHistory">Save Verified Checkpoint</button><button type="button" class="btn ghost" id="clearHistory">Erase Local Checkpoints…</button></div><div class="history-controls"><label for="replayUtc">Historical cutoff (UTC)</label><input id="replayUtc" type="datetime-local" step="0.001" aria-label="UTC historical replay cutoff"><button type="button" class="btn primary" id="runReplay">Replay As-Of UTC</button><button type="button" class="btn ghost" id="resetReplay">Return to Current Context</button></div><div class="history-info" id="replayStatus">Replay is read-only and never uses unconfirmed future observations.</div><div class="replay-results" id="replayResults"><span class="dim">Choose a verified historical UTC cutoff to inspect archived observations.</span></div></div></section>
+<section class="panel history-panel" aria-labelledby="historyTitle"><div class="panel-title"><div><h2 id="historyTitle">Durable History &amp; UTC Replay</h2><div class="subhead">IndexedDB checkpoints · verified series coverage · durable forensic history</div></div><span class="pill" id="storageStatus">CHECKING STORAGE</span></div><div class="history-body"><div class="history-info" id="storageDetail" role="status">Checking browser storage permissions. No saved data is treated as LIVE.</div><div class="history-info" id="analysisCoverage" role="status">Analytical bootstrap not started.</div><div class="history-actions"><button type="button" class="btn" id="saveHistory">Save Verified Checkpoint</button><button type="button" class="btn ghost" id="clearHistory">Erase Local Checkpoints…</button></div><div class="history-controls"><label for="replayUtc">Historical cutoff (UTC)</label><input id="replayUtc" type="datetime-local" step="0.001" aria-label="UTC historical replay cutoff"><button type="button" class="btn primary" id="runReplay">Replay As-Of UTC</button><button type="button" class="btn ghost" id="resetReplay">Return to Current Context</button></div><div class="history-info" id="replayStatus">Replay is read-only and never uses unconfirmed future observations.</div><div class="replay-results" id="replayResults"><span class="dim">Choose a verified historical UTC cutoff to inspect archived observations.</span></div></div></section>
 <section class="panel"><div class="panel-title"><div><h2>Selected Instrument</h2><div class="subhead" id="instrumentName">No symbol available</div></div><span class="pill" id="instrumentStatus">NO DATA</span></div><div class="summary"><div class="mini"><label>5m Closed Bars</label><span class="big" id="n5m">—</span><span class="mini-note">Target: 500</span></div><div class="mini"><label>15m Closed Bars</label><span class="big" id="n15m">—</span><span class="mini-note">Target: 400</span></div><div class="mini"><label>1H Closed Bars</label><span class="big" id="n1h">—</span><span class="mini-note">Target: 300</span></div><div class="mini"><label>4H Closed Bars</label><span class="big" id="n4h">—</span><span class="mini-note">Target: 300</span></div></div><div class="hint" id="instrumentHint">Structural observations require validated, contiguous closed-candle history. No market forecasts, signals or orders.</div></section>
 </div>
-<div class="bottom"><span>Binance Futures Institutional Signal Radar · Phase 3F · Time-aware structure, liquidity, FVG and Order Block context · No trading capability</span><span>API: <a class="subtle-link" href="https://developers.binance.com/en/docs/products/derivatives-trading-usds-futures/general-info" target="_blank" rel="noopener noreferrer">Official Binance Documentation ↗</a> · <span id="browserClock">Browser clock: —</span></span></div>
+<div class="bottom"><span>Binance Futures Institutional Signal Radar · Phase 3G · Time-aware structure, liquidity, FVG and Order Block context · No trading capability</span><span>API: <a class="subtle-link" href="https://developers.binance.com/en/docs/products/derivatives-trading-usds-futures/general-info" target="_blank" rel="noopener noreferrer">Official Binance Documentation ↗</a> · <span id="browserClock">Browser clock: —</span></span></div>
 </main>
 <script>
 'use strict';
 (() => {
-  // Phase 3F durable historical evidence and read-only replay. No signals, accounts or orders.
+  // Phase 3G operational resilience of approved Phase 3F history. No signals, accounts or orders.
   const CONFIG = Object.freeze({
     restBase: 'https://fapi.binance.com',
     marketWsBase: 'wss://fstream.binance.com/market/stream?streams=',
@@ -97,7 +97,7 @@
     fvg:{config:{minimumTicks:2,minimumAtr:0.05,expiryBars:180,displacementEnabled:false,displacementBodyAtr:0.8,displacementCloseFraction:0.65},overlays:true},
     orderBlocks:{config:{lookbackBars:12,atrPeriod:14,minimumTicks:2,minimumAtr:0.10,maximumAtr:3,displacementBodyAtr:0.7,displacementTicks:2,displacementCloseFraction:0.65,expiryBars:180},overlays:true},
     structureOverlays:true,
-    persistence:{mode:'CHECKING STORAGE',detail:'',db:null,checkpointId:null,commitAtMs:null,seriesCount:0,lastError:null,saveTimer:null,saving:false,savingAgain:false,lastAutoRequest:0,restored:false},
+    persistence:{mode:'CHECKING STORAGE',detail:'',db:null,checkpointId:null,commitAtMs:null,seriesCount:0,lastError:null,saveTimer:null,saving:false,savingAgain:false,lastAutoRequest:0,restored:false,lastWarning:null,lastSaveProfile:null,profileHistory:[]},
     replay:{active:false,symbol:null,cutoff:null},
     context:{indexes:new Map(),journals:new Map(),seen:new Map(),maxContextPerSymbol:64}};
   const CLOCK = () => Number.isFinite(state.timeOffset) ? Date.now()+state.timeOffset : NaN;
@@ -1081,8 +1081,15 @@
         'ANALYTICAL CHECKPOINT BEHIND VERIFIED CANDLES'});
     }
     return {expected:state.symbols.length*CONFIG.tfOrder.length,validCandleSeries:sourceReady,
-      analyticalSeriesReady,retainedHistoricalSeries:state.structure.records.size,failed,
-      bootstrapSettled:state.structure.bootstrap.settled};
+      analyticalSeriesReady,retainedHistoricalSeries:state.structure.records.size,
+      retiredHistoricalSeries:[...state.structure.records.keys()].filter(key=>!state.symbols.some(s=>key.startsWith(s.symbol+'|'))).length,
+      // These counters apply ONLY to currently selected subscribed series.
+      currentRecoveringSeries:state.symbols.reduce((n,s)=>n+CONFIG.tfOrder.filter(tf=>{
+        const store=state.stores.get(keyFor(s.symbol,tf));return !!store&&(store.resyncing||store.recoveryRequired);
+      }).length,0),
+      historicalOnlyCurrentSeries:state.symbols.reduce((n,s)=>n+CONFIG.tfOrder.filter(tf=>{
+        const store=state.stores.get(keyFor(s.symbol,tf));return !!state.structure.records.get(keyFor(s.symbol,tf))&&(!store||inspectStore(store,tf)!=='VALID');
+      }).length,0),failed,bootstrapSettled:state.structure.bootstrap.settled};
   }
   function finishAnalyticalBootstrap(epoch){
     const b=state.structure.bootstrap;if(epoch!==state.epoch||b.epoch!==epoch)return;
@@ -2168,7 +2175,12 @@
       caution:'Actual observations from THIS browser session only; external Binance connectivity not certified by this export. No mocked data in the shipped application.',
       application:{phase:'3F',readOnly:true,signalsEnabled:false,ordersEnabled:false,urlProtocol:location.protocol,userAgent:navigator.userAgent},
       analyticalBootstrap:analyticalCoverage(),
-      durableHistory:{schemaVersion:PERSISTENCE_SCHEMA,mode:state.persistence.mode,checkpointId:state.persistence.checkpointId,commitUtc:state.persistence.commitAtMs?new Date(state.persistence.commitAtMs).toISOString():null,restoredFromDisk:state.persistence.restored,recordedSeries:state.persistence.seriesCount,lastError:state.persistence.lastError,replayCutoffUtc:state.replay.active?new Date(state.replay.cutoff).toISOString():null,commitTimeIsNotExchangeKnowledgeTime:true},
+      durableHistory:{schemaVersion:PERSISTENCE_SCHEMA,operationalHardeningVersion:'3G.0.1',mode:state.persistence.mode,checkpointId:state.persistence.checkpointId,commitUtc:state.persistence.commitAtMs?new Date(state.persistence.commitAtMs).toISOString():null,restoredFromDisk:state.persistence.restored,recordedSeries:state.persistence.seriesCount,lastError:state.persistence.lastError,
+        lastRejectedCandidate:copyDiagnosticsMutable(state.persistence.lastWarning),
+        lastCheckpointProfile:copyDiagnosticsMutable(state.persistence.lastSaveProfile),
+        recentCheckpointProfiles:full?copyDiagnosticsMutable(state.persistence.profileHistory):[],
+        coverage:copyDiagnosticsMutable(analyticalCoverage()),
+        replayCutoffUtc:state.replay.active?new Date(state.replay.cutoff).toISOString():null,commitTimeIsNotExchangeKnowledgeTime:true},
       connectivity:{overall:showState(),browserOnline:navigator.onLine,hasRestSuccess:state.hasRestSuccess,restError:state.restError||null,
         serverTimeConfirmed:timeOK(),clockOffsetMs:state.timeOffset,clockRttMs:state.timeRtt,
         timeSyncedUtc:state.timeSyncedAt?nowIso(state.timeSyncedAt):null,
@@ -2317,6 +2329,46 @@
     const hash=await crypto.subtle.digest('SHA-256',bytes),hex=[...new Uint8Array(hash)].map(x=>x.toString(16).padStart(2,'0')).join('');
     return {sha256:hex,length:bytes.byteLength};
   }
+  // SHA-256 and canonical JSON serialization can dominate Android save time.
+  // A temporary same-origin Blob Worker computes exactly the historical v1
+  // digest format; only digests return, and the original payload is still
+  // written via native IndexedDB structured clone. Fail closed on SHA errors.
+  function createCheckpointDigestWorker(){
+    if(typeof Worker!=='function'||typeof Blob!=='function'||!globalThis.crypto?.subtle)return null;
+    const source=`self.onmessage=async event=>{try{
+      const data=JSON.stringify(event.data.value,(_key,v)=>v instanceof Map?{__radar_map__:[...v.entries()]}:v instanceof Set?{__radar_set__:[...v.values()]}:v);
+      const bytes=new TextEncoder().encode(data);
+      const hash=await crypto.subtle.digest('SHA-256',bytes);
+      const sha256=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('');
+      self.postMessage({id:event.data.id,sha256,length:bytes.byteLength});
+    }catch(error){self.postMessage({id:event.data.id,error:String(error?.message||error)});}};`;
+    let url=null;
+    try{url=URL.createObjectURL(new Blob([source],{type:'application/javascript'}));
+      const worker=new Worker(url);return {worker,url,count:0};}
+    catch(e){if(url)URL.revokeObjectURL(url);return null;}
+  }
+  function disposeCheckpointDigestWorker(d){if(!d)return;
+    try{d.worker.terminate();}catch{}try{URL.revokeObjectURL(d.url);}catch{}
+  }
+  function workerDigest(d,payload){return new Promise((resolve,reject)=>{
+    const id=++d.count,worker=d.worker;
+    const timeout=setTimeout(()=>{cleanup();reject(new Error('Checkpoint worker digest timeout'));},180000);
+    const cleanup=()=>{clearTimeout(timeout);worker.removeEventListener('message',receive);worker.removeEventListener('error',fail);};
+    const receive=event=>{if(event.data?.id!==id)return;cleanup();
+      if(event.data.error)reject(new Error(event.data.error));
+      else resolve({sha256:event.data.sha256,length:event.data.length});};
+    const fail=e=>{cleanup();reject(new Error(e.message||'Worker digest error'));};
+    worker.addEventListener('message',receive);worker.addEventListener('error',fail);
+    try{worker.postMessage({id,value:payload});}catch(e){cleanup();reject(e);}
+  });}
+  const checkpointHeap=()=>Number.isFinite(performance.memory?.usedJSHeapSize)?performance.memory.usedJSHeapSize:null;
+  const checkpointYield=()=>new Promise(resolve=>setTimeout(resolve,0));
+  function publishCheckpointProfile(profile){
+    const p=state.persistence;
+    p.lastSaveProfile=Object.freeze({...profile});p.profileHistory.push(p.lastSaveProfile);
+    if(p.profileHistory.length>12)p.profileHistory.splice(0,p.profileHistory.length-12);
+    track('events',{level:profile.committed?'info':'warn',message:`Checkpoint profile ${profile.committed?'COMMITTED':'FAILED'}: ${Math.round(profile.totalMs)} ms, ${profile.seriesCount} series, ${profile.checkpointBytes} bytes; stage ${profile.failureStage||'complete'}.`});
+  }
   // Reject records with foreign prototypes before data reach analytical code.
   function freezeRestoredEvidence(item,seen=new WeakSet()){
     if(!item||typeof item!=='object'||seen.has(item))return;
@@ -2378,8 +2430,11 @@
     const p=state.persistence;el.textContent=p.mode;
     el.className='pill '+(p.mode==='PERSISTED'?'ok':p.mode==='SAVING'?'wait':p.mode==='SESSION-ONLY'||p.mode.includes('UNVERIFIED')?'bad':'wait');
     const detail=p.detail||'No committed checkpoint available.';
-    $('storageDetail').textContent=`${detail} ${p.checkpointId?'Checkpoint '+p.checkpointId+'.':''} ${p.commitAtMs?'Committed '+new Date(p.commitAtMs).toISOString()+'.':''} Storage does not certify live exchange data.`;
-    const c=analyticalCoverage();$('analysisCoverage').textContent=`Valid candle series: ${c.validCandleSeries}/${c.expected}. Analytical series ready: ${c.analyticalSeriesReady}/${c.expected}. Retained historical trackers: ${c.retainedHistoricalSeries}. Bootstrap: ${c.bootstrapSettled?'SETTLED':'PENDING'}.${c.failed.length?' Unready: '+c.failed.slice(0,3).map(f=>f.key+' ('+f.reason+')').join('; '):''}`;
+    $('storageDetail').textContent=`${detail} ${p.checkpointId?'Checkpoint '+p.checkpointId+'.':''} ${p.commitAtMs?'Committed '+new Date(p.commitAtMs).toISOString()+'.':''} Storage never certifies a LIVE market feed.`;
+    const c=analyticalCoverage();const activeWarning=p.lastWarning&&c.analyticalSeriesReady!==c.expected;
+    const previousWarning=p.lastWarning&&!activeWarning?' Previous save rejection: resolved; retained in Diagnostics.':'';
+    const timing=p.lastSaveProfile?.committed?` Last save ${Math.round(p.lastSaveProfile.totalMs)} ms; ${Math.round(p.lastSaveProfile.checkpointBytes/1048576*10)/10} MiB.`:'';
+    $('analysisCoverage').textContent=`Current analytical: ${c.analyticalSeriesReady}/${c.expected}; valid REST candles: ${c.validCandleSeries}/${c.expected}; current live recovery: ${c.currentRecoveringSeries}; retained historical: ${c.retiredHistoricalSeries}; historical-only current: ${c.historicalOnlyCurrentSeries}. Bootstrap: ${c.bootstrapSettled?'SETTLED':'PENDING'}.${c.failed.length?' Unready current: '+c.failed.slice(0,2).map(f=>f.key+' ('+f.reason+')').join('; '):''}${previousWarning}${timing}`;
     $('saveHistory').disabled=!p.db||p.saving||p.mode.includes('UNVERIFIED')||!state.ready||!c.expected||!c.bootstrapSettled||c.validCandleSeries!==c.expected||c.analyticalSeriesReady!==c.expected;
     $('clearHistory').disabled=!p.db;
   }
@@ -2520,8 +2575,12 @@
     if(!state.ready||state.bootstrapping||state.completed!==state.total||!coverage.bootstrapSettled||
        !coverage.expected||coverage.validCandleSeries!==coverage.expected||
        coverage.analyticalSeriesReady!==coverage.expected){
-      const message=`Checkpoint rejected: analytical coverage ${coverage.analyticalSeriesReady}/${coverage.expected}, verified candles ${coverage.validCandleSeries}/${coverage.expected}; previous HEAD unchanged.`;
-      const p=state.persistence;p.lastError=message;p.detail=message;
+      const message=`Checkpoint rejected: current analytical coverage ${coverage.analyticalSeriesReady}/${coverage.expected}, verified candles ${coverage.validCandleSeries}/${coverage.expected}; previous HEAD unchanged.`;
+      const p=state.persistence;p.lastWarning={atMs:Date.now(),reason:message,
+        currentReady:coverage.analyticalSeriesReady,expected:coverage.expected};
+      // A rejected transient candidate is NOT a corrupted committed storage HEAD.
+      // Preserve the last successful PERSISTED/EMPTY mode and its honest detail.
+      if(!p.checkpointId&&p.mode==='EMPTY')p.detail='No committed checkpoint; incomplete current analytical coverage.';
       track('events',{level:'warn',message});if(manual)alertProblem('Incomplete analytical checkpoint',message);
       renderStorageStatus();throw new Error(message);
     }
@@ -2538,21 +2597,48 @@
     // manual and scheduled saves. Retired series are retained additionally.
     const coverage=assertCheckpointCoverage(manual);
     p.saving=true;p.mode='SAVING';p.detail='Capturing verified evidence and validating storage integrity.';renderStorageStatus();
-    const started=performance.now();let prepared;
+    const started=performance.now();let prepared,digestWorker=null;
+    const profile={schema:'Phase3G.CheckpointProfile.v1',startUtc:new Date().toISOString(),
+      captureMs:0,preflightMs:0,hashMs:0,transactionMs:0,totalMs:0,
+      maxMainThreadLagMs:0,heapBefore:checkpointHeap(),heapAfter:null,observedPeakHeap:checkpointHeap(),
+      checkpointBytes:0,seriesCount:0,archiveCount:0,workerDigests:0,mainThreadDigests:0,
+      committed:false,failureStage:null,error:null};
+    let stage='capture';let previousBeat=performance.now();const heartbeat=setInterval(()=>{
+      const current=performance.now();profile.maxMainThreadLagMs=Math.max(profile.maxMainThreadLagMs,Math.max(0,current-previousBeat-100));
+      previousBeat=current;const heap=checkpointHeap();if(heap!==null)profile.observedPeakHeap=Math.max(profile.observedPeakHeap||0,heap);
+    },100);
     try{
       // No await before capture: new market events cannot leak into this checkpoint.
+      let stageStart=performance.now();
       const captured=capturePersistenceSnapshot(),checkpointId=`${captured.capturedAtMs}-${state.structure.revisionSerial}`;
+      profile.captureMs=performance.now()-stageStart;
+      profile.seriesCount=captured.chunks.filter(x=>x.id.startsWith('series:')).length;
+      profile.archiveCount=captured.archiveCount;
+      stage='preflight';stageStart=performance.now();
       // Logical restorability is separate from SHA digests and transaction
       // atomicity. Reject a mixed valid/invalid candidate as a WHOLE. HEAD
       // remains the most recent independently restorable checkpoint.
       const preflight=validatePersistenceCandidate(captured);
       if(preflight.verifiedSeries<coverage.expected||preflight.verifiedSeries!==state.structure.records.size)
         throw new Error('Candidate preflight did not validate every analytical series');
+      profile.preflightMs=performance.now()-stageStart;
+      stage='digest';stageStart=performance.now();digestWorker=createCheckpointDigestWorker();
       prepared=[];for(const chunk of captured.chunks){
-        const fingerprint=await storageDigest(chunk.payload);
+        let fingerprint;
+        if(digestWorker){
+          try{fingerprint=await workerDigest(digestWorker,chunk.payload);profile.workerDigests++;}
+          catch(error){disposeCheckpointDigestWorker(digestWorker);digestWorker=null;
+            track('events',{level:'warn',message:'Checkpoint worker unavailable; using identical main-thread SHA-256: '+normalizedError(error)});
+          }
+        }
+        if(!fingerprint){fingerprint=await storageDigest(chunk.payload);profile.mainThreadDigests++;}
+        profile.checkpointBytes+=fingerprint.length;
         prepared.push({id:chunk.id,checkpointId,payload:chunk.payload,...fingerprint});
-        if(prepared.length%4===0)await new Promise(resolve=>setTimeout(resolve,0));
+        if(prepared.length%2===0)await checkpointYield();
       }
+      profile.hashMs=performance.now()-stageStart;
+      disposeCheckpointDigestWorker(digestWorker);digestWorker=null;
+      stage='transaction';stageStart=performance.now();
       const manifest={id:'HEAD',schema:PERSISTENCE_SCHEMA,engines:{...PERSISTENCE_ENGINES},
         checkpointId,commitAtMs:Date.now(),capturedAtMs:captured.capturedAtMs,
         seriesCount:prepared.filter(x=>x.id.startsWith('series:')).length,
@@ -2565,16 +2651,22 @@
         try{for(const row of prepared)os.put(row);os.put(manifest);}
         catch(error){reject(error);try{tx.abort();}catch{}}
       });
+      profile.transactionMs=performance.now()-stageStart;profile.committed=true;
       p.mode='PERSISTED';p.detail=`${manifest.seriesCount} series committed transactionally in ${Math.round(performance.now()-started)} ms.`;
       p.checkpointId=checkpointId;p.commitAtMs=manifest.commitAtMs;p.seriesCount=manifest.seriesCount;p.lastError=null;
       track('events',{level:'info',message:`IndexedDB checkpoint ${checkpointId} committed, ${manifest.seriesCount} series.`});
       return true;
     }catch(e){
-      p.lastError=normalizedError(e);p.mode=e?.name==='QuotaExceededError'?'QUOTA / UNVERIFIED':'SAVE FAILED';
+      profile.failureStage=stage;profile.error=normalizedError(e);
+      p.lastError=normalizedError(e);p.mode=e?.name==='QuotaExceededError'?'QUOTA / RETRYABLE':'SAVE FAILED';
       p.detail=`Checkpoint not committed: ${p.lastError}. Last completed checkpoint remains unchanged.`;
       track('events',{level:'error',message:p.detail});if(manual)alertProblem('Checkpoint save failed',p.detail);
       throw e;
     }finally{
+      disposeCheckpointDigestWorker(digestWorker);clearInterval(heartbeat);
+      profile.totalMs=performance.now()-started;profile.heapAfter=checkpointHeap();
+      if(profile.heapAfter!==null)profile.observedPeakHeap=Math.max(profile.observedPeakHeap||0,profile.heapAfter);
+      publishCheckpointProfile(profile);
       p.saving=false;renderStorageStatus();
       if(p.savingAgain){p.savingAgain=false;schedulePersistenceCheckpoint();}
     }
@@ -2632,7 +2724,7 @@
   setInterval(()=>{monitor();if(state.ready&&state.epoch){const epoch=state.epoch;if(!timeOK()||Date.now()-state.timeSyncedAt>180000)syncServerTime(epoch).catch(e=>{if(epoch===state.epoch){log('error','Binance time resync failed: '+normalizedError(e));scheduleRender();}});}},10000);
   setInterval(()=>{if(state.ready&&state.epoch&&Date.now()-state.lastRefresh>300000){state.lastRefresh=Date.now();const epoch=state.epoch;fetchJson('/fapi/v1/ticker/24hr',{},40,0,epoch).then(tickers=>{if(epoch!==state.epoch||!Array.isArray(tickers))return;const bySym=new Map(tickers.map(t=>[t.symbol,Number(t.quoteVolume)]));for(const s of state.symbols){const q=bySym.get(s.symbol);if(Number.isFinite(q)&&q>=0)s.quote24h=q;}scheduleRender();}).catch(()=>{});}},60000);
   // Read-only inspection hooks for deterministic quality-assurance tests; no simulated data is ever rendered by the app.
-  Object.defineProperty(window,'__RADAR_QA__',{value:Object.freeze({contextAsOf,contextCutoff,syncContextIndex,sourceIndexAsOf,computeFvg,createFvgTracker,cloneFvgTracker,advanceFvgTracker,fvgSnapshot,fvgAsOf,validateFvgConfig,computeLiquidity,createLiquidityTracker,cloneLiquidityTracker,advanceLiquidityTracker,liquiditySnapshot,liquidityAsOf,buildDiagnostics,serializeDiagnostics,exportDiagnostics,copyDiagnosticsMutable,copyDiagnosticsJournal,analyticalCoverage,assertCheckpointCoverage,queueStructure,finishAnalyticalBootstrap,persistCheckpoint,initializePersistence,capturePersistenceSnapshot,restorePersistenceSnapshot,validatePersistenceCandidate,performReplay,storageDigest,createObTracker,cloneObTracker,advanceObTracker,obSnapshot,obAsOf,computeOb,validateObConfig,validateLiquidityConfig,liquidityBands,computeStructure,checkedStructureBars,confirmedEventsAsOf,structureFor,createStructureTracker,advanceStructureTracker,cloneStructureTracker,snapshotStructure,reconcileStructureWindow,normalizeCandle,readFloat,readTradeCount,scanGap,candleEqual,getUniverse,expectedLastClose,historyWindow,validateSnapshot,newStore,mergeCandles,inspectStore,config:CONFIG,summary:()=>({mode:showState(),analyticalCoverage:analyticalCoverage(),stores:[...state.stores.entries()].map(([key,st])=>({key,status:inspectStore(st,key.split('|')[1]),count:st.bars.length,recoveryRequired:st.recoveryRequired}))})}),writable:false,configurable:false});
+  Object.defineProperty(window,'__RADAR_QA__',{value:Object.freeze({contextAsOf,contextCutoff,syncContextIndex,sourceIndexAsOf,computeFvg,createFvgTracker,cloneFvgTracker,advanceFvgTracker,fvgSnapshot,fvgAsOf,validateFvgConfig,computeLiquidity,createLiquidityTracker,cloneLiquidityTracker,advanceLiquidityTracker,liquiditySnapshot,liquidityAsOf,buildDiagnostics,serializeDiagnostics,exportDiagnostics,copyDiagnosticsMutable,copyDiagnosticsJournal,analyticalCoverage,assertCheckpointCoverage,queueStructure,finishAnalyticalBootstrap,persistCheckpoint,initializePersistence,capturePersistenceSnapshot,restorePersistenceSnapshot,validatePersistenceCandidate,performReplay,storageDigest,createCheckpointDigestWorker,disposeCheckpointDigestWorker,workerDigest,createObTracker,cloneObTracker,advanceObTracker,obSnapshot,obAsOf,computeOb,validateObConfig,validateLiquidityConfig,liquidityBands,computeStructure,checkedStructureBars,confirmedEventsAsOf,structureFor,createStructureTracker,advanceStructureTracker,cloneStructureTracker,snapshotStructure,reconcileStructureWindow,normalizeCandle,readFloat,readTradeCount,scanGap,candleEqual,getUniverse,expectedLastClose,historyWindow,validateSnapshot,newStore,mergeCandles,inspectStore,config:CONFIG,summary:()=>({mode:showState(),analyticalCoverage:analyticalCoverage(),stores:[...state.stores.entries()].map(([key,st])=>({key,status:inspectStore(st,key.split('|')[1]),count:st.bars.length,recoveryRequired:st.recoveryRequired}))})}),writable:false,configurable:false});
   render();initializePersistence().catch(e=>{state.persistence.mode='SESSION-ONLY';state.persistence.lastError=normalizedError(e);renderStorageStatus();}).finally(()=>begin());
 })();
 </script>
